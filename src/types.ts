@@ -1,4 +1,12 @@
-export type ScreenEffectMode = 'clean' | 'crt' | 'riso';
+export type ScreenEffectMode = 
+  | 'clean' 
+  | 'crt' 
+  | 'riso' 
+  | 'amber' 
+  | 'cyber' 
+  | 'blueprint' 
+  | 'sepia' 
+  | 'vhs';
 
 export interface SocialBadge {
   id: string;

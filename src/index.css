@@ -129,7 +129,8 @@
 /* CRT Screen Effect */
 .crt-mode {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  filter: contrast(108%) brightness(102%);
 }
 
 .crt-mode::before {
@@ -137,8 +138,8 @@
   display: block;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-              linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.28) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
   z-index: 999;
   background-size: 100% 4px, 6px 100%;
   pointer-events: none;
@@ -149,26 +150,176 @@
   display: block;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
+  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
   pointer-events: none;
   z-index: 1000;
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.6);
 }
 
 /* Risograph / Print Halftone Mode */
 .riso-mode {
-  filter: contrast(115%) saturate(125%) brightness(98%);
+  position: relative;
+  filter: contrast(122%) saturate(135%) brightness(98%);
 }
 
 .riso-mode::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(217, 93, 57, 0.18) 1px, transparent 0);
-  background-size: 4px 4px;
+  background-image: radial-gradient(rgba(217, 93, 57, 0.22) 1.2px, transparent 0),
+                    radial-gradient(rgba(14, 61, 60, 0.15) 1.2px, transparent 0);
+  background-size: 4px 4px, 6px 6px;
+  background-position: 0 0, 2px 2px;
   pointer-events: none;
   z-index: 998;
   mix-blend-mode: multiply;
+}
+
+/* Amber Phosphor 1982 Terminal Mode */
+.amber-mode {
+  position: relative;
+  filter: sepia(100%) hue-rotate(5deg) saturate(340%) contrast(120%) brightness(96%);
+}
+
+.amber-mode::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(230, 169, 42, 0) 50%, rgba(20, 10, 0, 0.35) 50%);
+  background-size: 100% 3px;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.amber-mode::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 60%, rgba(200, 120, 0, 0.18) 100%);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: inset 0 0 80px rgba(120, 60, 0, 0.5);
+}
+
+/* Cyber Green Phosphor (VT100 Terminal) Mode */
+.cyber-mode {
+  position: relative;
+  filter: sepia(100%) hue-rotate(85deg) saturate(360%) contrast(128%) brightness(92%);
+}
+
+.cyber-mode::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0, 255, 80, 0) 50%, rgba(0, 20, 5, 0.4) 50%),
+              linear-gradient(90deg, rgba(0, 255, 60, 0.03), rgba(0, 100, 30, 0.02), rgba(0, 255, 80, 0.03));
+  background-size: 100% 3px, 4px 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.cyber-mode::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 55%, rgba(0, 40, 10, 0.35) 100%);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: inset 0 0 90px rgba(0, 50, 10, 0.6);
+}
+
+/* Blueprint / Cyanotype Architectural Drafting Mode */
+.blueprint-mode {
+  position: relative;
+  filter: invert(90%) hue-rotate(185deg) saturate(230%) contrast(118%) brightness(96%);
+}
+
+.blueprint-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 998;
+}
+
+/* Sepia / 1970s Aged Gazette Mode */
+.sepia-mode {
+  position: relative;
+  filter: sepia(80%) contrast(106%) brightness(95%) saturate(115%);
+}
+
+.sepia-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(90, 50, 20, 0.16) 1.5px, transparent 0);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 998;
+  mix-blend-mode: multiply;
+}
+
+.sepia-mode::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  box-shadow: inset 0 0 100px rgba(80, 40, 10, 0.35);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* VHS Analog Cassette & Tracking Glitch Mode */
+.vhs-mode {
+  position: relative;
+  filter: contrast(112%) saturate(145%) brightness(103%);
+}
+
+.vhs-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 255, 0.06));
+  background-size: 100% 4px, 8px 100%;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.vhs-mode::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 999;
+  animation: vhs-scan 6s linear infinite;
+}
+
+@keyframes vhs-scan {
+  0% {
+    top: -20px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* Vinyl Spin Keyframes */
