@@ -21,6 +21,7 @@ export const NowPlayingCassette: React.FC = () => {
   const [deckMode, setDeckMode] = useState<'vinyl' | 'cassette'>('vinyl');
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [volumeGain, setVolumeGain] = useState<number>(1.0);
   const [eqBars, setEqBars] = useState<number[]>([40, 75, 55, 90, 65, 80, 45]);
 
   const currentTrack: TrackItem = VINYL_TRACKS[currentTrackIndex];
@@ -265,6 +266,42 @@ export const NowPlayingCassette: React.FC = () => {
             <p className="text-xs sm:text-sm font-sans text-stone-700 leading-relaxed bg-[#F5F2ED] p-2.5 sm:p-3 border border-stone-300">
               {currentTrack.description}
             </p>
+
+            {/* Volume Output Level Control */}
+            <div className="bg-[#F5F2ED] p-2.5 sm:p-3 border-2 border-[#141414] space-y-1.5">
+              <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono-retro font-bold">
+                <div className="flex items-center space-x-1.5 text-[#0E3D3C]">
+                  <Volume2 className="w-4 h-4 text-[#D95D39]" />
+                  <span>MASTER AUDIO GAIN</span>
+                </div>
+                <span className="text-[#D95D39] font-bold">
+                  {volumeGain === 0.8 ? 'STANDARD (80%)' : volumeGain === 1.0 ? 'HIGH OUTPUT (100%)' : 'MAX GAIN (140%)'}
+                </span>
+              </div>
+              <div className="flex items-center space-x-2">
+                {[
+                  { label: 'STANDARD', val: 0.8 },
+                  { label: 'BOOST 100%', val: 1.0 },
+                  { label: 'MAX GAIN 140%', val: 1.4 },
+                ].map((level) => (
+                  <button
+                    key={level.label}
+                    onClick={() => {
+                      setVolumeGain(level.val);
+                      audio.setVolume(level.val);
+                      audio.playClick(600);
+                    }}
+                    className={`flex-1 py-1 text-[9px] sm:text-[10px] font-mono-retro font-bold border border-[#141414] shadow-[1px_1px_0px_#141414] transition-all ${
+                      volumeGain === level.val
+                        ? 'bg-[#D95D39] text-[#F5F2ED]'
+                        : 'bg-[#FFFFFF] text-[#141414] hover:bg-[#E6A92A]/20'
+                    }`}
+                  >
+                    {level.label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {/* Big Tactile Transport Buttons */}
             <div className="flex items-center space-x-2.5 sm:space-x-3">

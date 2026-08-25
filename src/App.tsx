@@ -23,7 +23,7 @@ export default function App() {
   const handleToggleMute = () => {
     const nextMuted = !isMuted;
     setIsMuted(nextMuted);
-    audio.isMuted = nextMuted;
+    audio.setMuted(nextMuted);
     if (nextMuted) {
       audio.stopAmbient();
     }
