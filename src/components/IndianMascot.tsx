@@ -25,7 +25,7 @@ interface IndianMascotProps {
 
 export function IndianMascot({ onOpenGuestbook, onOpenEasterEgg }: IndianMascotProps) {
   const [mood, setMood] = useState<MascotMood>('idle');
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true);
   const [showBubble, setShowBubble] = useState(true);
   const [dialogueIndex, setDialogueIndex] = useState(0);
   const [clickCount, setClickCount] = useState(0);

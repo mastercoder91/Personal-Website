@@ -191,10 +191,10 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
     <>
       <header className="sticky top-0 z-40 bg-[#F5F2ED]/95 backdrop-blur-md border-b-2 sm:border-b-4 border-[#141414]">
         {/* Top micro-meta banner */}
-        <div className="bg-[#141414] text-[#F5F2ED] px-3 sm:px-4 py-1 sm:py-1.5 text-[9px] sm:text-[11px] font-mono-retro flex items-center justify-between gap-2 border-b border-[#141414] overflow-hidden">
-          <div className="flex items-center space-x-2 sm:space-x-3 truncate">
-            <span className="inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E6A92A] animate-pulse shrink-0"></span>
-            <span className="tracking-[0.15em] sm:tracking-[0.25em] uppercase font-bold text-[#E6A92A] truncate">
+        <div className="bg-[#141414] text-[#F5F2ED] px-2.5 sm:px-4 py-0.5 sm:py-1.5 text-[8px] sm:text-[11px] font-mono-retro flex items-center justify-between gap-1.5 sm:gap-2 border-b border-[#141414] overflow-hidden">
+          <div className="flex items-center space-x-1.5 sm:space-x-3 truncate">
+            <span className="inline-block w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E6A92A] animate-pulse shrink-0"></span>
+            <span className="tracking-[0.1em] sm:tracking-[0.25em] uppercase font-bold text-[#E6A92A] truncate">
               VOL. 67 — 2099 / FOLIO
             </span>
             <span className="hidden md:inline text-stone-500">|</span>
@@ -203,15 +203,15 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center space-x-2 sm:space-x-4 shrink-0">
+          <div className="flex items-center space-x-1.5 sm:space-x-4 shrink-0">
             <span className="text-stone-300 hidden lg:inline">
               NAGPUR (IST): <strong className="text-[#F5F2ED]">{nagpurTime}</strong>
             </span>
             <div className="flex items-center space-x-1">
-              <span className="text-[#141414] font-hindi font-bold bg-[#E6A92A] px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] tracking-wider uppercase">
+              <span className="text-[#141414] font-hindi font-bold bg-[#E6A92A] px-1 sm:px-2 py-0.5 text-[7px] sm:text-[10px] tracking-wider uppercase">
                 नागपुर
               </span>
-              <span className="text-[#F5F2ED] font-mono-retro font-bold bg-[#D95D39] px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] tracking-wider uppercase border border-[#141414]">
+              <span className="text-[#F5F2ED] font-mono-retro font-bold bg-[#D95D39] px-1 sm:px-2 py-0.5 text-[7px] sm:text-[10px] tracking-wider uppercase border border-[#141414]">
                 IN
               </span>
             </div>
@@ -219,7 +219,7 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
         </div>
 
         {/* Main Publication Navigation Bar */}
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 py-2 sm:py-3 flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={() => {
@@ -229,19 +229,19 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
               data-cursor="TOP"
               className="group flex items-center space-x-2 sm:space-x-2.5 text-left"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#D95D39] text-[#F5F2ED] flex items-center justify-center font-hindi font-bold text-lg sm:text-xl border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] group-hover:rotate-12 transition-transform shrink-0">
+              <div className="w-7 h-7 sm:w-9 sm:h-9 bg-[#D95D39] text-[#F5F2ED] flex items-center justify-center font-hindi font-bold text-base sm:text-xl border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] group-hover:rotate-12 transition-transform shrink-0">
                 आ
               </div>
               <div>
                 <div className="flex items-baseline space-x-1.5">
-                  <span className="font-rozha text-lg sm:text-2xl font-black tracking-tight text-[#141414] group-hover:text-[#D95D39] transition-colors leading-none">
+                  <span className="font-rozha text-base sm:text-2xl font-black tracking-tight text-[#141414] group-hover:text-[#D95D39] transition-colors leading-none">
                     AARAV
                   </span>
-                  <span className="font-hindi text-xs sm:text-sm font-bold text-[#D95D39] opacity-85 leading-none">
+                  <span className="font-hindi text-[10px] sm:text-sm font-bold text-[#D95D39] opacity-85 leading-none">
                     आरव
                   </span>
                 </div>
-                <div className="text-[8px] sm:text-[9px] font-mono-retro uppercase tracking-[0.15em] sm:tracking-[0.2em] text-stone-600 font-bold mt-0.5 flex items-center space-x-1">
+                <div className="text-[7px] sm:text-[9px] font-mono-retro uppercase tracking-[0.1em] sm:tracking-[0.2em] text-stone-600 font-bold mt-0.5 flex items-center space-x-1">
                   <span>CREATIVE CATALYST</span>
                   <span className="text-[#D95D39] hidden sm:inline">·</span>
                   <span className="font-hindi font-normal text-[#D95D39] hidden sm:inline text-[9px]">सृजनशील</span>

@@ -56,45 +56,45 @@ export const SocialStamps: React.FC = () => {
   };
 
   return (
-    <section id="stamps" className="py-10 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
+    <section id="stamps" className="py-8 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
           <div>
-            <div className="flex items-center space-x-2 text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-widest">
+            <div className="flex items-center space-x-1.5 sm:space-x-2 text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-wider sm:tracking-widest">
               <span>SECTION 02</span>
               <span>—</span>
               <span>PHILATELIC DISPATCHES</span>
-              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+              <span className="font-hindi text-[9px] sm:text-xs text-[#141414] font-bold">
                 (अध्याय ०२ : डाक टिकट एवं सम्पर्क)
               </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+            <h2 className="font-rozha text-2xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-0.5 sm:mt-1 flex flex-wrap items-baseline gap-1.5 sm:gap-2">
               <span>COLLECTIBLE SOCIAL STAMPS</span>
-              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+              <span className="font-hindi text-lg sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
                 ॥ आधिकारिक डाक टिकट संकलन ॥
               </span>
             </h2>
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
-              <Stamp className="w-3.5 h-3.5" />
+            <span className="inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
+              <Stamp className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               <span>5 OFFICIAL EDITIONS</span>
-              <span className="font-hindi text-[10px] text-[#141414]">· ५ डाक संस्करण</span>
+              <span className="font-hindi text-[9px] sm:text-[10px] text-[#141414]">· ५ डाक संस्करण</span>
             </span>
           </div>
         </div>
 
-        <p className="mt-3 sm:mt-4 text-stone-700 font-sans max-w-2xl text-xs sm:text-base leading-relaxed">
+        <p className="mt-2.5 sm:mt-4 text-stone-700 font-sans max-w-2xl text-xs sm:text-base leading-relaxed">
           Each social outpost rendered as a commemorative postage stamp. Tap to inspect details, copy handle, or launch direct dispatch.
-          <span className="block mt-1 font-hindi text-xs sm:text-sm text-stone-600">
+          <span className="block mt-0.5 sm:mt-1 font-hindi text-[11px] sm:text-sm text-stone-600">
             प्रत्येक डिजिटल पते को भारतीय डाक टिकट के रूप में संरक्षित किया गया है।
           </span>
         </p>
 
         {/* Stamps Grid */}
-        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-10">
+        <div className="grid grid-cols-1 min-[440px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6 md:gap-8 mt-5 sm:mt-10">
           {SOCIAL_STAMPS.map((stamp, idx) => {
             const isCopied = copiedId === stamp.id;
 
@@ -116,7 +116,7 @@ export const SocialStamps: React.FC = () => {
               >
                 {/* Perforated Postage Stamp Outer Body */}
                 <div 
-                  className="p-4 sm:p-5 rounded-none border-2 border-[#141414] shadow-[4px_4px_0px_#141414] sm:shadow-[6px_6px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[270px] sm:min-h-[300px]"
+                  className="p-3.5 sm:p-5 rounded-none border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[6px_6px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[230px] sm:min-h-[300px]"
                   style={{
                     backgroundColor: '#FFFFFF',
                     backgroundImage: `radial-gradient(circle at top left, transparent 6px, #FFFFFF 6px), 

@@ -12,11 +12,25 @@
     --font-hindi-signage: 'Yatra One', cursive, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     font-family: var(--font-sans-body);
     color: #141414;
     background-color: #F5F2ED;
+    overscroll-behavior-y: none;
   }
+}
+
+/* Hardware accelerated sections for fast rendering on low resource devices */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }
 
 /* Custom Typography Helpers */
@@ -134,11 +148,12 @@
   background-size: 14px 10px;
 }
 
-/* CRT Screen Effect */
+/* CRT Screen Effect - GPU optimized */
 .crt-mode {
   position: relative;
   overflow-x: hidden;
   filter: contrast(108%) brightness(102%);
+  will-change: filter;
 }
 
 .crt-mode::before {
@@ -151,6 +166,7 @@
   z-index: 999;
   background-size: 100% 4px, 6px 100%;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .crt-mode::after {
@@ -162,12 +178,14 @@
   pointer-events: none;
   z-index: 1000;
   box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.6);
+  transform: translateZ(0);
 }
 
 /* Risograph / Print Halftone Mode */
 .riso-mode {
   position: relative;
   filter: contrast(122%) saturate(135%) brightness(98%);
+  will-change: filter;
 }
 
 .riso-mode::before {
@@ -181,12 +199,14 @@
   pointer-events: none;
   z-index: 998;
   mix-blend-mode: multiply;
+  transform: translateZ(0);
 }
 
 /* Amber Phosphor 1982 Terminal Mode */
 .amber-mode {
   position: relative;
   filter: sepia(100%) hue-rotate(5deg) saturate(340%) contrast(120%) brightness(96%);
+  will-change: filter;
 }
 
 .amber-mode::before {
@@ -198,6 +218,7 @@
   background-size: 100% 3px;
   pointer-events: none;
   z-index: 999;
+  transform: translateZ(0);
 }
 
 .amber-mode::after {
@@ -209,12 +230,14 @@
   pointer-events: none;
   z-index: 1000;
   box-shadow: inset 0 0 80px rgba(120, 60, 0, 0.5);
+  transform: translateZ(0);
 }
 
 /* Cyber Green Phosphor (VT100 Terminal) Mode */
 .cyber-mode {
   position: relative;
   filter: sepia(100%) hue-rotate(85deg) saturate(360%) contrast(128%) brightness(92%);
+  will-change: filter;
 }
 
 .cyber-mode::before {
@@ -227,6 +250,7 @@
   background-size: 100% 3px, 4px 100%;
   pointer-events: none;
   z-index: 999;
+  transform: translateZ(0);
 }
 
 .cyber-mode::after {
@@ -238,12 +262,14 @@
   pointer-events: none;
   z-index: 1000;
   box-shadow: inset 0 0 90px rgba(0, 50, 10, 0.6);
+  transform: translateZ(0);
 }
 
 /* Blueprint / Cyanotype Architectural Drafting Mode */
 .blueprint-mode {
   position: relative;
   filter: invert(90%) hue-rotate(185deg) saturate(230%) contrast(118%) brightness(96%);
+  will-change: filter;
 }
 
 .blueprint-mode::before {
@@ -255,12 +281,14 @@
   background-size: 20px 20px;
   pointer-events: none;
   z-index: 998;
+  transform: translateZ(0);
 }
 
 /* Sepia / 1970s Aged Gazette Mode */
 .sepia-mode {
   position: relative;
   filter: sepia(80%) contrast(106%) brightness(95%) saturate(115%);
+  will-change: filter;
 }
 
 .sepia-mode::before {
@@ -272,6 +300,7 @@
   pointer-events: none;
   z-index: 998;
   mix-blend-mode: multiply;
+  transform: translateZ(0);
 }
 
 .sepia-mode::after {
@@ -281,12 +310,14 @@
   box-shadow: inset 0 0 100px rgba(80, 40, 10, 0.35);
   pointer-events: none;
   z-index: 999;
+  transform: translateZ(0);
 }
 
 /* VHS Analog Cassette & Tracking Glitch Mode */
 .vhs-mode {
   position: relative;
   filter: contrast(112%) saturate(145%) brightness(103%);
+  will-change: filter;
 }
 
 .vhs-mode::before {
@@ -298,6 +329,7 @@
   background-size: 100% 4px, 8px 100%;
   pointer-events: none;
   z-index: 998;
+  transform: translateZ(0);
 }
 
 .vhs-mode::after {
@@ -311,6 +343,7 @@
   pointer-events: none;
   z-index: 999;
   animation: vhs-scan 6s linear infinite;
+  transform: translateZ(0);
 }
 
 @keyframes vhs-scan {
@@ -342,11 +375,22 @@
 
 .animate-spin-slow {
   animation: spin-slow 18s linear infinite;
+  will-change: transform;
 }
 
 .animate-spin-slow-paused {
   animation: spin-slow 18s linear infinite;
   animation-play-state: paused;
+}
+
+/* Reduce motion on low resource or accessibility-preferred devices */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Ornamental Divider */
