@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { Compass, BookOpen, Cpu, Sparkles, Feather, Terminal, Palette, Radio } from 'lucide-react';
+import { audio } from '../utils/audio';
+
+export const AboutEditorial: React.FC = () => {
+  const [activePillar, setActivePillar] = useState<number>(0);
+
+  const pillars = [
+    {
+      title: "Systems Engineering",
+      tag: "THE BACKBONE",
+      icon: Cpu,
+      color: "#0E3D3C",
+      detail: "Architecting resilient, deterministic backend systems, zero-copy buffers, low-latency APIs, and clean data contracts that never buckle under pressure."
+    },
+    {
+      title: "Tactile Maximalism",
+      tag: "THE ETHOS",
+      icon: Palette,
+      color: "#D95D39",
+      detail: "Rejecting generic SaaS minimalism. Bringing back the weight, density, texture, and emotional resonance of physical print, postage stamps, and vintage hi-fi gear."
+    },
+    {
+      title: "Sound & Microtones",
+      tag: "THE RHYTHM",
+      icon: Radio,
+      color: "#E6A92A",
+      detail: "Curating rare Indian disco pressings, classic ragas, Web Audio synthesizers, and the mechanical clatter of vintage buckling spring keyboards."
+    },
+    {
+      title: "Editorial Typography",
+      tag: "THE CRAFT",
+      icon: Feather,
+      color: "#8A252C",
+      detail: "Obsessive font pairing, optical kerning, ink-trap preservation, and high-contrast serifs that give digital words genuine physical authority."
+    }
+  ];
+
+  return (
+    <section id="manifesto" className="py-16 md:py-24 border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+      {/* Background Halftone grid */}
+      <div className="absolute inset-0 bg-halftone opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        {/* Section Header with Issue stamp */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b-4 border-[#141414]">
+          <div>
+            <div className="flex items-center space-x-2 text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-widest">
+              <span>SECTION 01</span>
+              <span>—</span>
+              <span>THE PERSONAL MANIFESTO</span>
+            </div>
+            <h2 className="font-rozha text-4xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
+              PROCLAMATION & ESSENCE
+            </h2>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <span className="font-script text-2xl text-[#0E3D3C]">
+              "Craft over commodity."
+            </span>
+            <div className="px-3 py-1 bg-[#141414] text-[#F5F2ED] text-[10px] font-mono-retro font-bold uppercase border border-[#E6A92A]">
+              DISPATCH #88
+            </div>
+          </div>
+        </div>
+
+        {/* Two-Column Editorial Layout (80s Magazine Style) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-10 items-start">
+          {/* Left Main Article Column with Drop Cap */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="bg-[#FFFFFF] border-2 border-[#141414] p-6 sm:p-8 shadow-[8px_8px_0px_#141414] relative">
+              {/* Top Accent Stamp */}
+              <div className="absolute -top-3 left-6 bg-[#D95D39] text-[#F5F2ED] px-3 py-0.5 text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414]">
+                EDITORIAL ESSAY
+              </div>
+
+              <div className="prose max-w-none text-[#141414]">
+                <p className="text-base sm:text-lg leading-relaxed text-stone-800">
+                  <span className="float-left font-rozha text-6xl sm:text-7xl font-bold leading-none pr-3 pt-1 text-[#D95D39] select-none">
+                    A
+                  </span>
+                  curious teenager with a strong interest in technology, Formula 1, music, and creative projects. 🏎️💻🎧
+                </p>
+
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-stone-700 font-sans">
+                  I enjoy building things, experimenting with new ideas, discovering new sounds, and exploring whatever happens to capture my attention. I’m particularly interested in how technology can be used to turn ideas into something tangible and meaningful.
+                </p>
+
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-stone-700 font-sans">
+                  Outside of development, I’m usually following F1, exploring music, learning something new, or going down an unnecessarily deep rabbit hole about a completely random ass topic.✌🏻✌🏻
+                </p>
+
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-stone-700 font-sans font-medium text-stone-900">
+                  Currently focused on learning, creating, and figuring out what comes next with a little financial assistance from the family corporation™. 💀
+                </p>
+              </div>
+
+              {/* Pull-Quote with Indian Editorial Framing */}
+              <div className="my-6 p-4 sm:p-5 bg-[#F5F2ED] border-l-4 border-[#0E3D3C] border-y border-r border-[#141414]/20 relative">
+                <p className="font-display italic text-lg sm:text-xl font-bold text-[#0E3D3C] leading-snug">
+                  “Just get your ass to build something cool ahh soul”
+                </p>
+                <div className="mt-2 text-right">
+                  <span className="font-script text-lg text-[#D95D39]">— Aarav's Notebook</span>
+                </div>
+              </div>
+
+              {/* Quick stats / credentials row */}
+              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-stone-200 text-center font-mono-retro">
+                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-sm sm:text-base text-[#D95D39] font-bold leading-tight flex items-center justify-center min-h-[32px]">
+                    ig some months
+                  </div>
+                  <div className="text-[9px] uppercase text-stone-600 font-bold">into dev journey ✌🏻</div>
+                </div>
+                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-xl sm:text-2xl text-[#0E3D3C] font-bold">100%</div>
+                  <div className="text-[9px] uppercase text-stone-600 font-bold">Independent Spirit</div>
+                </div>
+                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-xl sm:text-2xl text-[#E6A92A] font-bold">∞</div>
+                  <div className="text-[9px] uppercase text-stone-600 font-bold">Coffee & Diet Coke</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Four Pillars of Craft */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="font-mono-retro text-xs font-bold uppercase tracking-widest text-[#0E3D3C]">
+                THE CORE PILLARS
+              </span>
+              <span className="text-[10px] font-mono-retro text-stone-500 font-bold">
+                CLICK TO INSPECT
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {pillars.map((pillar, idx) => {
+                const IconComponent = pillar.icon;
+                const isSelected = activePillar === idx;
+
+                return (
+                  <motion.button
+                    key={idx}
+                    onClick={() => {
+                      audio.playClick(400 + idx * 70);
+                      setActivePillar(idx);
+                    }}
+                    whileHover={{ x: 4 }}
+                    data-cursor="INSPECT"
+                    className={`w-full text-left p-4 border-2 border-[#141414] shadow-[4px_4px_0px_#141414] transition-all relative overflow-hidden ${
+                      isSelected
+                        ? 'bg-[#FFFFFF] ring-2 ring-[#D95D39]'
+                        : 'bg-[#F5F2ED] hover:bg-[#FFFFFF]'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div
+                          className="w-9 h-9 flex items-center justify-center text-[#F5F2ED] border border-[#141414] shadow-sm"
+                          style={{ backgroundColor: pillar.color }}
+                        >
+                          <IconComponent className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <div className="text-[10px] font-mono-retro font-bold text-stone-500 tracking-wider">
+                            {pillar.tag}
+                          </div>
+                          <h4 className="font-display font-bold text-base text-[#141414]">
+                            {pillar.title}
+                          </h4>
+                        </div>
+                      </div>
+
+                      <span className="font-mono-retro text-xs font-bold text-stone-400">
+                        0{idx + 1}
+                      </span>
+                    </div>
+
+                    {isSelected && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        className="mt-3 pt-3 border-t border-stone-200 text-xs text-stone-700 font-sans leading-relaxed"
+                      >
+                        {pillar.detail}
+                      </motion.p>
+                    )}
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            {/* Cultural Influence Callout Box */}
+            <div className="p-4 bg-[#0E3D3C] text-[#F5F2ED] border-2 border-[#141414] shadow-[4px_4px_0px_#141414] relative">
+              <div className="flex items-center space-x-2 text-[#E6A92A] text-xs font-mono-retro font-bold mb-1">
+                <Sparkles className="w-4 h-4" />
+                <span>CULTURAL INFLUENCE</span>
+              </div>
+              <p className="text-xs text-stone-200 leading-relaxed">
+                Drawing inspiration from NID Ahmedabad design journals, matchbox label art, hand-painted cinema billboards, and Indian railway signage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

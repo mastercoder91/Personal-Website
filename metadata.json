@@ -1,0 +1,6 @@
+{
+  "name": "Aarav — Personal Site",
+  "description": "A retro-elegant maximalist personal artifact and digital showcase inspired by 1980s editorial design, vintage record sleeves, and tactile interactive media.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
