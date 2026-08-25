@@ -12,24 +12,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
   const nameLetters = "AARAV".split("");
 
   return (
-    <section className="relative pt-6 pb-16 md:py-16 overflow-hidden border-b-4 border-[#141414] bg-[#F5F2ED]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <section className="relative pt-4 pb-12 sm:pt-6 sm:pb-16 md:py-16 overflow-hidden border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED]">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
         {/* Top Editorial Eyebrow & Badges Row (Bold Typography Theme) */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#141414]/20">
-          <div className="flex items-center space-x-3">
+        <div className="flex items-center justify-between gap-2 pb-3 sm:pb-4 border-b border-[#141414]/20">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="flex flex-col">
-              <span className="text-[11px] font-mono-retro font-bold tracking-[0.3em] uppercase text-[#141414]/70 mb-1">
-                Vol. 67 — 2099 / Digital Home Base
+              <span className="text-[9px] sm:text-[11px] font-mono-retro font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#141414]/70 mb-0.5 sm:mb-1 truncate">
+                Vol. 67 — 2099 / Folio
               </span>
-              <div className="w-32 h-[2px] bg-[#141414]/20" />
+              <div className="w-20 sm:w-32 h-[2px] bg-[#141414]/20" />
             </div>
-            <span className="hidden sm:inline-block font-script text-xl text-[#D95D39] -rotate-3">
+            <span className="hidden sm:inline-block font-script text-lg sm:text-xl text-[#D95D39] -rotate-3">
               Nagpur & beyond —
             </span>
           </div>
 
-          <div className="flex items-center space-x-2">
-            <span className="text-[11px] font-mono-retro font-bold tracking-[0.3em] uppercase bg-[#E6A92A] text-[#141414] px-2.5 py-1 border border-[#141414] shadow-[2px_2px_0px_#141414]">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+            <span className="text-[9px] sm:text-[11px] font-mono-retro font-bold tracking-[0.15em] sm:tracking-[0.3em] uppercase bg-[#E6A92A] text-[#141414] px-2 sm:px-2.5 py-0.5 sm:py-1 border border-[#141414] shadow-[1px_1px_0px_#141414] sm:shadow-[2px_2px_0px_#141414]">
               Based in Nagpur
             </span>
             <span className="text-xs font-mono-retro text-stone-500 hidden md:inline">
@@ -39,23 +39,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
         </div>
 
         {/* Central Massive Bold Typography Headline */}
-        <div className="relative py-10 md:py-14 flex flex-col justify-center items-center">
+        <div className="relative py-6 sm:py-10 md:py-14 flex flex-col justify-center items-center overflow-hidden">
           {/* Conic Sunburst Ray Watermark in Background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] sm:w-[580px] md:w-[720px] h-[420px] sm:h-[580px] md:h-[720px] opacity-[0.07] pointer-events-none rounded-full bg-conic-sunburst" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] min-[360px]:w-[340px] sm:w-[540px] md:w-[720px] h-[280px] min-[360px]:h-[340px] sm:h-[540px] md:h-[720px] opacity-[0.06] pointer-events-none rounded-full bg-conic-sunburst" />
 
           {/* Huge Serif Headline with Hard Mustard Shadow */}
-          <div className="flex items-baseline justify-center select-none z-10">
+          <div className="flex items-baseline justify-center select-none z-10 max-w-full">
             <h1 
-              className="font-rozha text-[90px] sm:text-[140px] md:text-[180px] lg:text-[210px] font-black tracking-[-0.04em] leading-[0.8] text-[#141414] flex"
+              className="font-rozha text-[54px] min-[360px]:text-[66px] min-[410px]:text-[78px] min-[480px]:text-[96px] sm:text-[130px] md:text-[170px] lg:text-[200px] font-black tracking-[-0.04em] leading-[0.85] text-[#141414] flex"
               style={{
-                textShadow: '8px 8px 0px #E6A92A',
+                textShadow: '4px 4px 0px #E6A92A',
                 fontFamily: '"Rozha One", "Playfair Display", "Georgia", serif',
               }}
             >
               {nameLetters.map((char, index) => (
                 <motion.span
                   key={index}
-                  initial={{ y: 80, opacity: 0, rotate: index % 2 === 0 ? -10 : 10 }}
+                  initial={{ y: 50, opacity: 0, rotate: index % 2 === 0 ? -10 : 10 }}
                   animate={{ y: 0, opacity: 1, rotate: 0 }}
                   transition={{
                     type: "spring",
@@ -83,33 +83,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="z-10 mt-5 px-5 py-1.5 bg-[#141414] text-[#F5F2ED] italic font-serif text-sm sm:text-lg md:text-2xl font-medium tracking-[0.1em] uppercase shadow-[4px_4px_0px_#D95D39] border border-[#141414]"
+            className="z-10 mt-3 sm:mt-5 px-3 sm:px-5 py-1 sm:py-1.5 bg-[#141414] text-[#F5F2ED] italic font-serif text-[11px] min-[360px]:text-xs sm:text-base md:text-xl font-medium tracking-[0.06em] sm:tracking-[0.1em] uppercase shadow-[2px_2px_0px_#D95D39] sm:shadow-[4px_4px_0px_#D95D39] border border-[#141414] text-center"
           >
             Creative Catalyst • Digital Alchemist
           </motion.div>
         </div>
 
         {/* 3-Card Showcase Grid from Theme */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-4 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mt-2 sm:mt-4 z-10">
           {/* Card 1: Angled Terracotta Personality Card */}
           <motion.div
             whileHover={{ rotate: 0, scale: 1.02 }}
-            initial={{ rotate: -2 }}
-            className="bg-[#D95D39] p-6 text-[#F5F2ED] border-2 border-[#141414] shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden"
+            className="bg-[#D95D39] p-5 sm:p-6 text-[#F5F2ED] border-2 border-[#141414] shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden sm:-rotate-1 sm:hover:rotate-0"
           >
             <div>
               <div className="flex items-center justify-between border-b border-[#F5F2ED]/40 pb-2 mb-3">
-                <h3 className="text-[11px] uppercase tracking-widest font-bold font-mono-retro">
+                <h3 className="text-[10px] sm:text-[11px] uppercase tracking-widest font-bold font-mono-retro">
                   01 / PERSONALITY & ETHOS
                 </h3>
                 <Sparkles className="w-4 h-4 text-[#E6A92A]" />
               </div>
-              <p className="text-[15px] sm:text-[16px] leading-snug italic font-serif text-[#F5F2ED]">
+              <p className="text-sm sm:text-[15px] leading-snug italic font-serif text-[#F5F2ED]">
                 "Design explorer finding beauty in the intersection of retro aesthetics and future tech. I build software systems that feel good to use and better to look at."
               </p>
             </div>
 
-            <div className="mt-6 pt-3 border-t border-[#F5F2ED]/20 flex items-center justify-between text-[11px] font-mono-retro opacity-90 uppercase">
+            <div className="mt-5 sm:mt-6 pt-3 border-t border-[#F5F2ED]/20 flex items-center justify-between text-[10px] sm:text-[11px] font-mono-retro opacity-90 uppercase">
               <span>Aarav Maturkar</span>
               <button
                 onClick={() => onScrollToSection('manifesto')}
@@ -122,63 +121,63 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </motion.div>
 
           {/* Card 2: Interactive Social Postage Stamps Cluster */}
-          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-5 shadow-[8px_8px_0px_#141414] flex flex-col justify-between">
+          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-4 sm:p-5 shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between">
             <div className="flex items-center justify-between border-b border-stone-200 pb-2 mb-3">
-              <span className="text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">
+              <span className="text-[10px] sm:text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">
                 02 / POSTAL OUTPOSTS
               </span>
-              <span className="text-[10px] font-mono-retro text-[#D95D39] font-bold">
+              <span className="text-[9px] sm:text-[10px] font-mono-retro text-[#D95D39] font-bold">
                 COMMEMORATIVE
               </span>
             </div>
 
             {/* 4 Mini Stamped Outposts */}
-            <div className="grid grid-cols-2 gap-3 my-2">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 my-2">
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm rotate-2 hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
               >
-                <div className="w-full h-10 bg-[#D95D39]/20 flex items-center justify-center font-bold text-sm text-[#D95D39]">
+                <div className="w-full h-8 sm:h-10 bg-[#D95D39]/20 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
                   𝕏
                 </div>
-                <div className="text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
+                <div className="text-[9px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
                   @AaravMaturkar
                 </div>
-                <div className="absolute -right-1 -top-1 w-3.5 h-3.5 bg-[#E6A92A] rotate-45" />
+                <div className="absolute -right-1 -top-1 w-3 h-3 bg-[#E6A92A] rotate-45" />
               </button>
 
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm -rotate-3 hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
               >
-                <div className="w-full h-10 bg-[#0E3D3C]/20 flex items-center justify-center font-bold text-sm text-[#0E3D3C]">
+                <div className="w-full h-8 sm:h-10 bg-[#0E3D3C]/20 flex items-center justify-center font-bold text-xs sm:text-sm text-[#0E3D3C]">
                   📸
                 </div>
-                <div className="text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
+                <div className="text-[9px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
                   @aaravmaturkar
                 </div>
               </button>
 
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm rotate-1 hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
               >
-                <div className="w-full h-10 bg-[#141414]/15 flex items-center justify-center font-bold text-sm text-[#141414]">
+                <div className="w-full h-8 sm:h-10 bg-[#141414]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#141414]">
                   💻
                 </div>
-                <div className="text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
+                <div className="text-[9px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
                   @mastercoder91
                 </div>
               </button>
 
               <a
                 href="mailto:codemaster923@gmail.com"
-                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm -rotate-2 hover:rotate-0 transition-transform relative group text-left"
+                className="bg-[#F5F2ED] border border-gray-400 p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group text-left"
               >
-                <div className="w-full h-10 bg-[#D95D39]/15 flex items-center justify-center font-bold text-sm text-[#D95D39]">
+                <div className="w-full h-8 sm:h-10 bg-[#D95D39]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
                   📧
                 </div>
-                <div className="text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
+                <div className="text-[9px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-1 truncate">
                   Direct Mail
                 </div>
               </a>
@@ -187,7 +186,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
             <div className="pt-2 text-right">
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="text-[11px] font-mono-retro font-bold text-[#D95D39] hover:underline uppercase"
+                className="text-[10px] sm:text-[11px] font-mono-retro font-bold text-[#D95D39] hover:underline uppercase"
               >
                 View All 5 Stamps →
               </button>
@@ -195,38 +194,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </div>
 
           {/* Card 3: Interactive Vinyl Record Deck Highlight */}
-          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-5 shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-4 sm:p-5 shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between border-b border-stone-200 pb-2 mb-2">
-              <span className="text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">
+              <span className="text-[10px] sm:text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">
                 03 / SOUND ARCHIVE
               </span>
-              <span className="text-[10px] font-mono-retro text-[#E6A92A] font-bold bg-[#141414] px-1.5 py-0.5">
+              <span className="text-[9px] sm:text-[10px] font-mono-retro text-[#E6A92A] font-bold bg-[#141414] px-1.5 py-0.5">
                 33⅓ RPM
               </span>
             </div>
 
             {/* Vinyl Disc Visual Center */}
-            <div className="relative my-3 flex items-center justify-center">
-              <div className="w-32 h-32 bg-[#141414] rounded-full flex items-center justify-center border-4 border-[#E6A92A] shadow-md animate-spin-slow">
-                <div className="w-28 h-28 rounded-full border border-[#F5F2ED]/20 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-[#D95D39] rounded-full border-2 border-[#141414] flex items-center justify-center">
+            <div className="relative my-2 sm:my-3 flex items-center justify-center">
+              <div className="w-28 sm:w-32 h-28 sm:h-32 bg-[#141414] rounded-full flex items-center justify-center border-4 border-[#E6A92A] shadow-md animate-spin-slow">
+                <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full border border-[#F5F2ED]/20 flex items-center justify-center">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#D95D39] rounded-full border-2 border-[#141414] flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                 </div>
               </div>
 
               {/* Angled Now Playing Plate */}
-              <div className="absolute -bottom-2 right-1 bg-[#F5F2ED] border-2 border-[#141414] p-2 px-3 rotate-2 shadow-md">
-                <div className="text-[9px] uppercase font-mono-retro font-black tracking-tighter text-[#141414]">
+              <div className="absolute -bottom-1 right-0 bg-[#F5F2ED] border-2 border-[#141414] p-1.5 sm:p-2 px-2.5 sm:px-3 rotate-2 shadow-md">
+                <div className="text-[8px] sm:text-[9px] uppercase font-mono-retro font-black tracking-tighter text-[#141414]">
                   FEATURED TRACK
                 </div>
-                <div className="text-[11px] font-serif italic font-bold text-[#D95D39] truncate max-w-[160px]">
+                <div className="text-[10px] sm:text-[11px] font-serif italic font-bold text-[#D95D39] truncate max-w-[130px] sm:max-w-[160px]">
                   Ananda Shankar — Jumpin'
                 </div>
               </div>
             </div>
 
-            <div className="pt-3 border-t border-stone-200 flex items-center justify-between">
+            <div className="pt-2 sm:pt-3 border-t border-stone-200 flex items-center justify-between">
               <button
                 onClick={() => onScrollToSection('turntable')}
                 className="w-full py-2 bg-[#141414] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider hover:bg-[#D95D39] transition-colors flex items-center justify-center space-x-2 shadow-[2px_2px_0px_#E6A92A]"
@@ -239,20 +238,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
         </div>
 
         {/* Action Buttons Bar */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 pt-6 border-t-2 border-[#141414]">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3 pt-4 sm:pt-6 border-t-2 border-[#141414]">
           <button
             onClick={() => onScrollToSection('stamps')}
             data-cursor="POSTAGE"
-            className="px-5 py-2.5 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[4px_4px_0px_#141414] hover:bg-[#C04C2A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center space-x-2"
+            className="w-full sm:w-auto px-4 sm:px-5 py-2.5 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#C04C2A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-2"
           >
             <span>COLLECTIBLE SOCIAL STAMPS</span>
-            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="w-3.5 h-3.5" />
           </button>
 
           <button
             onClick={() => onScrollToSection('turntable')}
             data-cursor="LISTEN"
-            className="px-4 py-2.5 bg-[#0E3D3C] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[4px_4px_0px_#141414] hover:bg-[#164E4D] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center space-x-2"
+            className="w-full sm:w-auto px-4 sm:px-4 py-2.5 bg-[#0E3D3C] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#164E4D] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-2"
           >
             <Disc className="w-4 h-4 text-[#E6A92A]" />
             <span>PLAY CASSETTE SYNTH</span>
@@ -261,7 +260,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           <a
             href="mailto:codemaster923@gmail.com"
             data-cursor="EMAIL"
-            className="px-4 py-2.5 bg-[#FFFFFF] text-[#141414] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[4px_4px_0px_#141414] hover:bg-[#F5F2ED] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center space-x-1.5"
+            className="w-full sm:w-auto px-4 sm:px-4 py-2.5 bg-[#FFFFFF] text-[#141414] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#F5F2ED] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-1.5"
           >
             <Mail className="w-3.5 h-3.5 text-[#D95D39]" />
             <span>DISPATCH MAIL</span>

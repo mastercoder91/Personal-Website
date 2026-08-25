@@ -38,47 +38,47 @@ export const AboutEditorial: React.FC = () => {
   ];
 
   return (
-    <section id="manifesto" className="py-16 md:py-24 border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+    <section id="manifesto" className="py-10 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
       {/* Background Halftone grid */}
       <div className="absolute inset-0 bg-halftone opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
         {/* Section Header with Issue stamp */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-widest">
+            <div className="flex items-center space-x-2 text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-widest">
               <span>SECTION 01</span>
               <span>—</span>
               <span>THE PERSONAL MANIFESTO</span>
             </div>
-            <h2 className="font-rozha text-4xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
+            <h2 className="font-rozha text-3xl sm:text-4xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
               PROCLAMATION & ESSENCE
             </h2>
           </div>
 
-          <div className="flex items-center space-x-3">
-            <span className="font-script text-2xl text-[#0E3D3C]">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <span className="font-script text-xl sm:text-2xl text-[#0E3D3C]">
               "Craft over commodity."
             </span>
-            <div className="px-3 py-1 bg-[#141414] text-[#F5F2ED] text-[10px] font-mono-retro font-bold uppercase border border-[#E6A92A]">
+            <div className="px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#141414] text-[#F5F2ED] text-[9px] sm:text-[10px] font-mono-retro font-bold uppercase border border-[#E6A92A]">
               DISPATCH #88
             </div>
           </div>
         </div>
 
         {/* Two-Column Editorial Layout (80s Magazine Style) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mt-6 sm:mt-10 items-start">
           {/* Left Main Article Column with Drop Cap */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="bg-[#FFFFFF] border-2 border-[#141414] p-6 sm:p-8 shadow-[8px_8px_0px_#141414] relative">
+            <div className="bg-[#FFFFFF] border-2 border-[#141414] p-4 sm:p-6 md:p-8 shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] relative">
               {/* Top Accent Stamp */}
-              <div className="absolute -top-3 left-6 bg-[#D95D39] text-[#F5F2ED] px-3 py-0.5 text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414]">
+              <div className="absolute -top-3 left-4 sm:left-6 bg-[#D95D39] text-[#F5F2ED] px-2.5 sm:px-3 py-0.5 text-[9px] sm:text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414]">
                 EDITORIAL ESSAY
               </div>
 
               <div className="prose max-w-none text-[#141414]">
                 <p className="text-base sm:text-lg leading-relaxed text-stone-800">
-                  <span className="float-left font-rozha text-6xl sm:text-7xl font-bold leading-none pr-3 pt-1 text-[#D95D39] select-none">
+                  <span className="float-left font-rozha text-5xl sm:text-6xl md:text-7xl font-bold leading-none pr-3 pt-1 text-[#D95D39] select-none">
                     A
                   </span>
                   curious teenager with a strong interest in technology, Formula 1, music, and creative projects. 🏎️💻🎧
@@ -98,30 +98,30 @@ export const AboutEditorial: React.FC = () => {
               </div>
 
               {/* Pull-Quote with Indian Editorial Framing */}
-              <div className="my-6 p-4 sm:p-5 bg-[#F5F2ED] border-l-4 border-[#0E3D3C] border-y border-r border-[#141414]/20 relative">
-                <p className="font-display italic text-lg sm:text-xl font-bold text-[#0E3D3C] leading-snug">
+              <div className="my-5 sm:my-6 p-3.5 sm:p-5 bg-[#F5F2ED] border-l-4 border-[#0E3D3C] border-y border-r border-[#141414]/20 relative">
+                <p className="font-display italic text-base sm:text-xl font-bold text-[#0E3D3C] leading-snug">
                   “Just get your ass to build something cool ahh soul”
                 </p>
-                <div className="mt-2 text-right">
-                  <span className="font-script text-lg text-[#D95D39]">— Aarav's Notebook</span>
+                <div className="mt-1.5 sm:mt-2 text-right">
+                  <span className="font-script text-base sm:text-lg text-[#D95D39]">— Aarav's Notebook</span>
                 </div>
               </div>
 
               {/* Quick stats / credentials row */}
-              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-stone-200 text-center font-mono-retro">
-                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-sm sm:text-base text-[#D95D39] font-bold leading-tight flex items-center justify-center min-h-[32px]">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 pt-3 sm:pt-4 border-t border-stone-200 text-center font-mono-retro">
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-xs min-[360px]:text-sm sm:text-base text-[#D95D39] font-bold leading-tight flex items-center justify-center min-h-[28px] sm:min-h-[32px]">
                     ig some months
                   </div>
-                  <div className="text-[9px] uppercase text-stone-600 font-bold">into dev journey ✌🏻</div>
+                  <div className="text-[7px] min-[360px]:text-[8px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">into dev journey ✌🏻</div>
                 </div>
-                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-xl sm:text-2xl text-[#0E3D3C] font-bold">100%</div>
-                  <div className="text-[9px] uppercase text-stone-600 font-bold">Independent Spirit</div>
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-lg sm:text-2xl text-[#0E3D3C] font-bold">100%</div>
+                  <div className="text-[7px] min-[360px]:text-[8px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">Independent Spirit</div>
                 </div>
-                <div className="p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-xl sm:text-2xl text-[#E6A92A] font-bold">∞</div>
-                  <div className="text-[9px] uppercase text-stone-600 font-bold">Coffee & Diet Coke</div>
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300">
+                  <div className="font-rozha text-lg sm:text-2xl text-[#E6A92A] font-bold">∞</div>
+                  <div className="text-[7px] min-[360px]:text-[8px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">Curiosity & Craft</div>
                 </div>
               </div>
             </div>

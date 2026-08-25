@@ -39,7 +39,7 @@ export interface GuestbookEntry {
 }
 
 export interface CurrentlyItem {
-  category: 'READING' | 'BUILDING' | 'LISTENING' | 'SIPPING' | 'EXPLORING';
+  category: 'READING' | 'BUILDING' | 'LISTENING' | 'SIPPING' | 'EXPLORING' | 'WATCHING' | string;
   title: string;
   subtitle: string;
   tag: string;

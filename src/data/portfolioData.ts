@@ -149,12 +149,12 @@ export const CURRENTLY_LIST: CurrentlyItem[] = [
     accent: '#E6A92A'
   },
   {
-    category: 'SIPPING',
-    title: 'Dark Roast Coffee & Diet Coke',
-    subtitle: 'Freshly pulled espresso shots & ice-cold Diet Coke on constant rotation',
-    tag: 'Daily Fuel · Caffeine Matrix',
-    quote: '"The fuel behind every build and late-night F1 race."',
-    icon: 'Coffee',
+    category: 'WATCHING',
+    title: 'Formula 1 & Telemetry',
+    subtitle: 'Grand Prix race strategies, tire degradation charts, and aerodynamics analysis',
+    tag: 'F1 Racing · Telemetry · High Speed',
+    quote: '"Precision engineering and high-speed problem solving at 300+ km/h."',
+    icon: 'Compass',
     accent: '#8A252C'
   },
   {
