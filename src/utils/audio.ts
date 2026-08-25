@@ -303,6 +303,86 @@ class RetroAudioEngine {
     this.stopAmbientLoop();
   }
 
+  public playMascotChime() {
+    if (this.isMuted) return;
+    try {
+      this.initContext();
+      if (!this.ctx) return;
+      const now = this.ctx.currentTime;
+      // Joyful Indian pentatonic raga arpeggio (Sa, Ga, Pa, Dha, Sa')
+      const notes = [523.25, 659.25, 783.99, 880.0, 1046.5];
+      notes.forEach((freq, idx) => {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.05);
+        gain.gain.setValueAtTime(0.2, now + idx * 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.05 + 0.3);
+        osc.connect(gain);
+        gain.connect(this.getDestinationNode());
+        osc.start(now + idx * 0.05);
+        osc.stop(now + idx * 0.05 + 0.32);
+      });
+    } catch {}
+  }
+
+  public playTablaTap() {
+    if (this.isMuted) return;
+    try {
+      this.initContext();
+      if (!this.ctx) return;
+      const now = this.ctx.currentTime;
+      
+      // Bayan (bass tabla slide)
+      const bayanOsc = this.ctx.createOscillator();
+      const bayanGain = this.ctx.createGain();
+      bayanOsc.type = 'sine';
+      bayanOsc.frequency.setValueAtTime(120, now);
+      bayanOsc.frequency.exponentialRampToValueAtTime(70, now + 0.2);
+      bayanGain.gain.setValueAtTime(0.5, now);
+      bayanGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+      bayanOsc.connect(bayanGain);
+      bayanGain.connect(this.getDestinationNode());
+      bayanOsc.start(now);
+      bayanOsc.stop(now + 0.2);
+
+      // Dayan (high ring rim)
+      const dayanOsc = this.ctx.createOscillator();
+      const dayanGain = this.ctx.createGain();
+      dayanOsc.type = 'triangle';
+      dayanOsc.frequency.setValueAtTime(440, now + 0.04);
+      dayanOsc.frequency.exponentialRampToValueAtTime(320, now + 0.18);
+      dayanGain.gain.setValueAtTime(0.28, now + 0.04);
+      dayanGain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+      dayanOsc.connect(dayanGain);
+      dayanGain.connect(this.getDestinationNode());
+      dayanOsc.start(now + 0.04);
+      dayanOsc.stop(now + 0.19);
+    } catch {}
+  }
+
+  public playChaiSip() {
+    if (this.isMuted) return;
+    try {
+      this.initContext();
+      if (!this.ctx) return;
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(350, now);
+      osc.frequency.linearRampToValueAtTime(850, now + 0.15);
+      osc.frequency.exponentialRampToValueAtTime(200, now + 0.28);
+      gain.gain.setValueAtTime(0.22, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+      osc.connect(gain);
+      gain.connect(this.getDestinationNode());
+      osc.start(now);
+      osc.stop(now + 0.3);
+    } catch {}
+  }
+
   private stopAmbientLoop() {
     if (this.ambientInterval !== null) {
       clearInterval(this.ambientInterval);

@@ -9,28 +9,32 @@ export const AboutEditorial: React.FC = () => {
   const pillars = [
     {
       title: "Systems Engineering",
-      tag: "THE BACKBONE",
+      hindiTitle: "तंत्रज्ञान वास्तुशिल्प",
+      tag: "THE BACKBONE · मुख्य आधार",
       icon: Cpu,
       color: "#0E3D3C",
       detail: "Architecting resilient, deterministic backend systems, zero-copy buffers, low-latency APIs, and clean data contracts that never buckle under pressure."
     },
     {
       title: "Tactile Maximalism",
-      tag: "THE ETHOS",
+      hindiTitle: "स्पर्शनीय प्रचुरता",
+      tag: "THE ETHOS · दर्शन",
       icon: Palette,
       color: "#D95D39",
       detail: "Rejecting generic SaaS minimalism. Bringing back the weight, density, texture, and emotional resonance of physical print, postage stamps, and vintage hi-fi gear."
     },
     {
       title: "Sound & Microtones",
-      tag: "THE RHYTHM",
+      hindiTitle: "ध्वनि एवं सूक्ष्म स्वर",
+      tag: "THE RHYTHM · लय एवं ताल",
       icon: Radio,
       color: "#E6A92A",
       detail: "Curating rare Indian disco pressings, classic ragas, Web Audio synthesizers, and the mechanical clatter of vintage buckling spring keyboards."
     },
     {
       title: "Editorial Typography",
-      tag: "THE CRAFT",
+      hindiTitle: "मुद्रण एवं लिपि शिल्प",
+      tag: "THE CRAFT · कला",
       icon: Feather,
       color: "#8A252C",
       detail: "Obsessive font pairing, optical kerning, ink-trap preservation, and high-contrast serifs that give digital words genuine physical authority."
@@ -50,9 +54,15 @@ export const AboutEditorial: React.FC = () => {
               <span>SECTION 01</span>
               <span>—</span>
               <span>THE PERSONAL MANIFESTO</span>
+              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+                (अध्याय ०१ : विचारधारा)
+              </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-4xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
-              PROCLAMATION & ESSENCE
+            <h2 className="font-rozha text-3xl sm:text-4xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+              <span>PROCLAMATION & ESSENCE</span>
+              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+                ॥ उद्घोषणा एवं तत्व ॥
+              </span>
             </h2>
           </div>
 
@@ -72,8 +82,10 @@ export const AboutEditorial: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="bg-[#FFFFFF] border-2 border-[#141414] p-4 sm:p-6 md:p-8 shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] relative">
               {/* Top Accent Stamp */}
-              <div className="absolute -top-3 left-4 sm:left-6 bg-[#D95D39] text-[#F5F2ED] px-2.5 sm:px-3 py-0.5 text-[9px] sm:text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414]">
-                EDITORIAL ESSAY
+              <div className="absolute -top-3 left-4 sm:left-6 bg-[#D95D39] text-[#F5F2ED] px-2.5 sm:px-3 py-0.5 text-[9px] sm:text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414] flex items-center space-x-1.5">
+                <span>EDITORIAL ESSAY</span>
+                <span>·</span>
+                <span className="font-hindi font-normal">संपादकीय लेख</span>
               </div>
 
               <div className="prose max-w-none text-[#141414]">
@@ -102,8 +114,12 @@ export const AboutEditorial: React.FC = () => {
                 <p className="font-display italic text-base sm:text-xl font-bold text-[#0E3D3C] leading-snug">
                   “Just get your ass to build something cool ahh soul”
                 </p>
-                <div className="mt-1.5 sm:mt-2 text-right">
+                <p className="font-hindi text-sm sm:text-base text-stone-700 mt-2 font-medium">
+                  "साहस से निर्माण करो, बारीकियों में सौंदर्य खोजो।"
+                </p>
+                <div className="mt-1.5 sm:mt-2 text-right flex items-center justify-end space-x-1">
                   <span className="font-script text-base sm:text-lg text-[#D95D39]">— Aarav's Notebook</span>
+                  <span className="font-hindi text-xs text-stone-500 font-bold">(आरव की डायरी)</span>
                 </div>
               </div>
 
@@ -130,9 +146,14 @@ export const AboutEditorial: React.FC = () => {
           {/* Right Column: Interactive Four Pillars of Craft */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono-retro text-xs font-bold uppercase tracking-widest text-[#0E3D3C]">
-                THE CORE PILLARS
-              </span>
+              <div className="flex items-center space-x-1.5">
+                <span className="font-mono-retro text-xs font-bold uppercase tracking-widest text-[#0E3D3C]">
+                  THE CORE PILLARS
+                </span>
+                <span className="font-hindi text-[10px] text-[#D95D39] font-bold">
+                  (चार मुख्य स्तंभ)
+                </span>
+              </div>
               <span className="text-[10px] font-mono-retro text-stone-500 font-bold">
                 CLICK TO INSPECT
               </span>
@@ -170,9 +191,14 @@ export const AboutEditorial: React.FC = () => {
                           <div className="text-[10px] font-mono-retro font-bold text-stone-500 tracking-wider">
                             {pillar.tag}
                           </div>
-                          <h4 className="font-display font-bold text-base text-[#141414]">
-                            {pillar.title}
-                          </h4>
+                          <div className="flex items-baseline space-x-2">
+                            <h4 className="font-display font-bold text-base text-[#141414]">
+                              {pillar.title}
+                            </h4>
+                            <span className="font-hindi text-xs font-bold text-[#D95D39]">
+                              {pillar.hindiTitle}
+                            </span>
+                          </div>
                         </div>
                       </div>
 
@@ -199,11 +225,15 @@ export const AboutEditorial: React.FC = () => {
             <div className="p-4 bg-[#0E3D3C] text-[#F5F2ED] border-2 border-[#141414] shadow-[4px_4px_0px_#141414] relative">
               <div className="flex items-center space-x-2 text-[#E6A92A] text-xs font-mono-retro font-bold mb-1">
                 <Sparkles className="w-4 h-4" />
-                <span>CULTURAL INFLUENCE</span>
+                <span>CULTURAL INFLUENCE · सांस्कृतिक प्रभाव</span>
               </div>
               <p className="text-xs text-stone-200 leading-relaxed">
                 Drawing inspiration from NID Ahmedabad design journals, matchbox label art, hand-painted cinema billboards, and Indian railway signage.
               </p>
+              <div className="mt-2 pt-2 border-t border-[#F5F2ED]/20 flex items-center justify-between text-[10px] font-hindi text-[#E6A92A]">
+                <span>सिनेमा पोस्टर एवं मुद्रण कला</span>
+                <span>भारतीय रेलवे चिन्ह</span>
+              </div>
             </div>
           </div>
         </div>

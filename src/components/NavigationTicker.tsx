@@ -198,8 +198,8 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
               VOL. 67 — 2099 / FOLIO
             </span>
             <span className="hidden md:inline text-stone-500">|</span>
-            <span className="hidden md:inline text-stone-300 tracking-wider">
-              ARCHIVE NO. B-4881 / 1984
+            <span className="hidden md:inline font-hindi text-stone-300 tracking-wider">
+              नागपुर · भारत संग्रह NO. B-4881
             </span>
           </div>
 
@@ -207,9 +207,14 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
             <span className="text-stone-300 hidden lg:inline">
               NAGPUR (IST): <strong className="text-[#F5F2ED]">{nagpurTime}</strong>
             </span>
-            <span className="text-[#141414] font-bold bg-[#E6A92A] px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase">
-              NAGPUR, IN
-            </span>
+            <div className="flex items-center space-x-1">
+              <span className="text-[#141414] font-hindi font-bold bg-[#E6A92A] px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] tracking-wider uppercase">
+                नागपुर
+              </span>
+              <span className="text-[#F5F2ED] font-mono-retro font-bold bg-[#D95D39] px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] tracking-wider uppercase border border-[#141414]">
+                IN
+              </span>
+            </div>
           </div>
         </div>
 
@@ -224,15 +229,22 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
               data-cursor="TOP"
               className="group flex items-center space-x-2 sm:space-x-2.5 text-left"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#D95D39] text-[#F5F2ED] flex items-center justify-center font-rozha font-bold text-lg sm:text-xl border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] group-hover:rotate-12 transition-transform shrink-0">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#D95D39] text-[#F5F2ED] flex items-center justify-center font-hindi font-bold text-lg sm:text-xl border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] group-hover:rotate-12 transition-transform shrink-0">
                 आ
               </div>
               <div>
-                <div className="font-rozha text-lg sm:text-2xl font-black tracking-tight text-[#141414] group-hover:text-[#D95D39] transition-colors leading-none">
-                  AARAV
+                <div className="flex items-baseline space-x-1.5">
+                  <span className="font-rozha text-lg sm:text-2xl font-black tracking-tight text-[#141414] group-hover:text-[#D95D39] transition-colors leading-none">
+                    AARAV
+                  </span>
+                  <span className="font-hindi text-xs sm:text-sm font-bold text-[#D95D39] opacity-85 leading-none">
+                    आरव
+                  </span>
                 </div>
-                <div className="text-[8px] sm:text-[9px] font-mono-retro uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#D95D39] font-bold mt-0.5">
-                  CREATIVE CATALYST
+                <div className="text-[8px] sm:text-[9px] font-mono-retro uppercase tracking-[0.15em] sm:tracking-[0.2em] text-stone-600 font-bold mt-0.5 flex items-center space-x-1">
+                  <span>CREATIVE CATALYST</span>
+                  <span className="text-[#D95D39] hidden sm:inline">·</span>
+                  <span className="font-hindi font-normal text-[#D95D39] hidden sm:inline text-[9px]">सृजनशील</span>
                 </div>
               </div>
             </button>
@@ -242,38 +254,43 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
           <nav className="hidden lg:flex items-center space-x-1 font-mono-retro text-xs font-bold text-[#141414]">
             <button
               onClick={() => scrollToSection('manifesto')}
-              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all"
+              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all flex flex-col items-center leading-none py-1"
               data-cursor="ABOUT"
             >
-              01. MANIFESTO
+              <span>01. MANIFESTO</span>
+              <span className="text-[8px] font-hindi text-[#D95D39] font-normal mt-0.5">विचारधारा</span>
             </button>
             <button
               onClick={() => scrollToSection('stamps')}
-              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all"
+              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all flex flex-col items-center leading-none py-1"
               data-cursor="SOCIALS"
             >
-              02. STAMPS
+              <span>02. STAMPS</span>
+              <span className="text-[8px] font-hindi text-[#D95D39] font-normal mt-0.5">डाक टिकट</span>
             </button>
             <button
               onClick={() => scrollToSection('turntable')}
-              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all"
+              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all flex flex-col items-center leading-none py-1"
               data-cursor="VINYL"
             >
-              03. SOUND DECK
+              <span>03. SOUND DECK</span>
+              <span className="text-[8px] font-hindi text-[#D95D39] font-normal mt-0.5">ध्वनि तरंग</span>
             </button>
             <button
               onClick={() => scrollToSection('curiosities')}
-              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all"
+              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all flex flex-col items-center leading-none py-1"
               data-cursor="CURRENTLY"
             >
-              04. CABINET
+              <span>04. CABINET</span>
+              <span className="text-[8px] font-hindi text-[#D95D39] font-normal mt-0.5">जिज्ञासा</span>
             </button>
             <button
               onClick={() => scrollToSection('guestbook')}
-              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all"
+              className="px-3 py-1.5 border border-transparent hover:border-[#141414] hover:bg-[#E6A92A]/20 hover:text-[#D95D39] transition-all flex flex-col items-center leading-none py-1"
               data-cursor="SIGN"
             >
-              05. GUESTBOOK
+              <span>05. GUESTBOOK</span>
+              <span className="text-[8px] font-hindi text-[#D95D39] font-normal mt-0.5">मुहर व हस्ताक्षर</span>
             </button>
           </nav>
 

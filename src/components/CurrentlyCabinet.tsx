@@ -37,9 +37,15 @@ export const CurrentlyCabinet: React.FC = () => {
               <span>SECTION 04</span>
               <span>—</span>
               <span>CURATED ARCHIVE & CURIOSITIES</span>
+              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+                (अध्याय ०४ : अभिरुचियां एवं अध्ययन)
+              </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
-              THE CURRENT OBSESSIONS
+            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+              <span>THE CURRENT OBSESSIONS</span>
+              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+                ॥ वर्तमान जिज्ञासा एवं साधना ॥
+              </span>
             </h2>
           </div>
 
@@ -71,12 +77,19 @@ export const CurrentlyCabinet: React.FC = () => {
                 <div>
                   {/* Top Specimen Tag */}
                   <div className="flex items-center justify-between border-b border-[#141414]/20 pb-2 mb-3">
-                    <span
-                      className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono-retro font-bold text-[#F5F2ED] uppercase tracking-wider"
-                      style={{ backgroundColor: item.accent }}
-                    >
-                      {item.category}
-                    </span>
+                    <div className="flex items-center space-x-1.5">
+                      <span
+                        className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono-retro font-bold text-[#F5F2ED] uppercase tracking-wider"
+                        style={{ backgroundColor: item.accent }}
+                      >
+                        {item.category}
+                      </span>
+                      {item.hindiCategory && (
+                        <span className="font-hindi text-[10px] font-bold text-stone-700">
+                          {item.hindiCategory}
+                        </span>
+                      )}
+                    </div>
                     <span className="text-[9px] sm:text-[10px] font-mono-retro text-stone-500 font-bold">
                       ITEM NO. 0{idx + 1}
                     </span>
@@ -93,6 +106,11 @@ export const CurrentlyCabinet: React.FC = () => {
                       <h4 className="font-rozha text-lg sm:text-xl font-bold text-[#141414] leading-tight">
                         {item.title}
                       </h4>
+                      {item.hindiTitle && (
+                        <span className="font-hindi text-xs text-[#D95D39] font-bold block mt-0.5">
+                          {item.hindiTitle}
+                        </span>
+                      )}
                       <p className="text-[11px] sm:text-xs text-stone-600 font-mono-retro mt-0.5 font-bold">
                         {item.tag}
                       </p>
@@ -123,9 +141,14 @@ export const CurrentlyCabinet: React.FC = () => {
             {/* Top Tag */}
             <div>
               <div className="flex items-center justify-between border-b border-[#141414]/20 pb-2 mb-3">
-                <span className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono-retro font-bold text-[#F5F2ED] bg-[#0E3D3C] uppercase tracking-wider">
-                  DISPATCH
-                </span>
+                <div className="flex items-center space-x-1.5">
+                  <span className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono-retro font-bold text-[#F5F2ED] bg-[#0E3D3C] uppercase tracking-wider">
+                    DISPATCH
+                  </span>
+                  <span className="font-hindi text-[10px] font-bold text-stone-700">
+                    संदेश
+                  </span>
+                </div>
                 <span className="text-[9px] sm:text-[10px] font-mono-retro text-stone-500 font-bold">
                   ITEM NO. 06
                 </span>
@@ -140,7 +163,7 @@ export const CurrentlyCabinet: React.FC = () => {
                     Daily Proverb
                   </h4>
                   <p className="text-[11px] sm:text-xs text-stone-600 font-mono-retro font-bold">
-                    For Builders & Crafters
+                    For Builders & Crafters · शिल्पकारों हेतु
                   </p>
                 </div>
               </div>
@@ -150,13 +173,17 @@ export const CurrentlyCabinet: React.FC = () => {
                 <p className="font-display text-xs sm:text-sm font-bold text-[#141414] italic leading-relaxed">
                   “Just get your ass to build something cool ahh soul”
                 </p>
+                <p className="font-hindi text-xs sm:text-sm font-bold text-[#0E3D3C] mt-2">
+                  "कर्म में निष्ठा, शिल्प में सौंदर्य और सृजन में आनंद।"
+                </p>
               </div>
             </div>
 
-            <div className="mt-2.5 sm:mt-3 pt-2 border-t border-stone-200 text-right">
+            <div className="mt-2.5 sm:mt-3 pt-2 border-t border-stone-200 text-right flex items-center justify-end space-x-2">
               <span className="font-script text-sm sm:text-base text-[#D95D39]">
                 — From the Workbench
               </span>
+              <span className="font-hindi text-xs text-stone-500 font-bold">(कार्यशाला से)</span>
             </div>
           </motion.div>
         </div>

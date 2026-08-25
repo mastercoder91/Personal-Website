@@ -110,9 +110,15 @@ export const Guestbook: React.FC = () => {
               <span>SECTION 05</span>
               <span>—</span>
               <span>VISITORS' DISPATCH REGISTER</span>
+              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+                (अध्याय ०५ : आगंतुक पंजिका)
+              </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
-              THE VINTAGE GUESTBOOK
+            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+              <span>THE VINTAGE GUESTBOOK</span>
+              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+                ॥ आगंतुक हस्ताक्षर एवं विचार ॥
+              </span>
             </h2>
           </div>
 
@@ -120,6 +126,7 @@ export const Guestbook: React.FC = () => {
             <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
               <Stamp className="w-3.5 h-3.5" />
               <span>{entries.length} STAMPED ENTRIES</span>
+              <span className="font-hindi text-[10px] text-[#141414]">· {entries.length} प्रविष्टियां</span>
             </span>
           </div>
         </div>
@@ -134,6 +141,9 @@ export const Guestbook: React.FC = () => {
                 <h3 className="font-rozha text-lg sm:text-xl font-bold text-[#141414]">
                   STAMP YOUR IMPRINT
                 </h3>
+                <span className="font-hindi text-xs text-[#D95D39] font-bold">
+                  (मुहर अंकित करें)
+                </span>
               </div>
               <span className="text-[9px] sm:text-[10px] font-mono-retro font-bold text-stone-500 uppercase truncate">
                 GODREJ 1984
@@ -143,7 +153,7 @@ export const Guestbook: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 font-mono-retro text-xs">
               <div>
                 <label className="block text-stone-700 font-bold uppercase mb-1 text-[11px] sm:text-xs">
-                  YOUR NAME / DISPATCH CODENAME:
+                  YOUR NAME / DISPATCH CODENAME: <span className="font-hindi font-normal text-stone-500">(आपका नाम)</span>
                 </label>
                 <input
                   type="text"
@@ -157,7 +167,7 @@ export const Guestbook: React.FC = () => {
 
               <div>
                 <label className="block text-stone-700 font-bold uppercase mb-1 text-[11px] sm:text-xs">
-                  CITY OF DISPATCH:
+                  CITY OF DISPATCH: <span className="font-hindi font-normal text-stone-500">(शहर)</span>
                 </label>
                 <input
                   type="text"
@@ -170,7 +180,7 @@ export const Guestbook: React.FC = () => {
 
               <div>
                 <label className="block text-stone-700 font-bold uppercase mb-1 text-[11px] sm:text-xs">
-                  MESSAGE / GREETING (MAX 240 CHARS):
+                  MESSAGE / GREETING (MAX 240 CHARS): <span className="font-hindi font-normal text-stone-500">(संदेश)</span>
                 </label>
                 <textarea
                   required
@@ -186,7 +196,7 @@ export const Guestbook: React.FC = () => {
               {/* Wax Seal Selector */}
               <div className="pt-2 border-t border-stone-200">
                 <label className="block text-stone-700 font-bold uppercase mb-1.5 text-[10px] sm:text-xs">
-                  CUSTOMIZE WAX SEAL EMBLEM & WAX:
+                  CUSTOMIZE WAX SEAL EMBLEM & WAX: <span className="font-hindi font-normal text-stone-500">(लाख की मुहर)</span>
                 </label>
                 
                 {/* Wax Color Picker */}
@@ -254,7 +264,7 @@ export const Guestbook: React.FC = () => {
                 className="w-full py-2.5 sm:py-3 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] hover:bg-[#C04C2A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-2 mt-3 sm:mt-4"
               >
                 <Stamp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span>APPLY WAX SEAL & STAMP NOTE</span>
+                <span>APPLY WAX SEAL & STAMP NOTE · मुहर लगाएं</span>
               </button>
 
               {showSuccess && (
@@ -263,7 +273,7 @@ export const Guestbook: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-2 sm:p-2.5 bg-emerald-100 border border-emerald-400 text-emerald-900 rounded text-center font-bold text-xs"
                 >
-                  ✓ Note inscribed and wax-sealed successfully!
+                  ✓ Note inscribed and wax-sealed successfully! (संदेश दर्ज हुआ)
                 </motion.div>
               )}
             </form>
@@ -272,9 +282,14 @@ export const Guestbook: React.FC = () => {
           {/* Right 7 Cols: Stamped Bulletin Board Ledger */}
           <div className="lg:col-span-7 space-y-3 sm:space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono-retro text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#0E3D3C]">
-                RECENT VISITOR DISPATCHES
-              </span>
+              <div className="flex items-center space-x-1.5">
+                <span className="font-mono-retro text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#0E3D3C]">
+                  RECENT VISITOR DISPATCHES
+                </span>
+                <span className="font-hindi text-[10px] text-[#D95D39] font-bold">
+                  (आगंतुक संदेश)
+                </span>
+              </div>
               <span className="text-[9px] sm:text-[10px] font-mono-retro text-stone-500 font-bold">
                 SCROLLABLE BULLETIN LEDGER
               </span>

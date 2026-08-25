@@ -12,6 +12,7 @@ import { CurrentlyCabinet } from './components/CurrentlyCabinet';
 import { Guestbook } from './components/Guestbook';
 import { EasterEggVault } from './components/EasterEggVault';
 import { FooterSignoff } from './components/FooterSignoff';
+import { IndianMascot } from './components/IndianMascot';
 
 export default function App() {
   const [screenMode, setScreenMode] = useState<ScreenEffectMode>('clean');
@@ -142,6 +143,12 @@ export default function App() {
       <EasterEggVault
         isOpen={isEasterEggOpen}
         onClose={() => setIsEasterEggOpen(false)}
+      />
+
+      {/* Interactive Indian Studio Mascot (Chhote Ustad) */}
+      <IndianMascot
+        onOpenGuestbook={handleOpenGuestbook}
+        onOpenEasterEgg={() => setIsEasterEggOpen(true)}
       />
     </div>
   );

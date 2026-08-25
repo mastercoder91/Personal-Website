@@ -26,9 +26,14 @@ export const FooterSignoff: React.FC<FooterSignoffProps> = ({ onOpenEasterEgg, o
               <div className="w-6 sm:w-7 h-6 sm:h-7 bg-[#D95D39] text-[#F5F2ED] flex items-center justify-center font-rozha font-bold text-xs sm:text-sm border border-[#F5F2ED]">
                 आ
               </div>
-              <span className="font-rozha text-xl sm:text-2xl font-bold tracking-tight text-[#F5F2ED]">
-                AARAV MATURKAR
-              </span>
+              <div>
+                <span className="font-rozha text-xl sm:text-2xl font-bold tracking-tight text-[#F5F2ED] block">
+                  AARAV MATURKAR
+                </span>
+                <span className="font-hindi text-xs text-[#E6A92A] font-bold block">
+                  आरव मातुरकर · शिल्प एवं सृजन
+                </span>
+              </div>
             </div>
 
             <p className="font-sans text-xs text-stone-300 leading-relaxed max-w-sm">

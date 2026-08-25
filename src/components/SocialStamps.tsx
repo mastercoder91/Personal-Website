@@ -65,9 +65,15 @@ export const SocialStamps: React.FC = () => {
               <span>SECTION 02</span>
               <span>—</span>
               <span>PHILATELIC DISPATCHES</span>
+              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+                (अध्याय ०२ : डाक टिकट एवं सम्पर्क)
+              </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
-              COLLECTIBLE SOCIAL STAMPS
+            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+              <span>COLLECTIBLE SOCIAL STAMPS</span>
+              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+                ॥ आधिकारिक डाक टिकट संकलन ॥
+              </span>
             </h2>
           </div>
 
@@ -75,12 +81,16 @@ export const SocialStamps: React.FC = () => {
             <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
               <Stamp className="w-3.5 h-3.5" />
               <span>5 OFFICIAL EDITIONS</span>
+              <span className="font-hindi text-[10px] text-[#141414]">· ५ डाक संस्करण</span>
             </span>
           </div>
         </div>
 
         <p className="mt-3 sm:mt-4 text-stone-700 font-sans max-w-2xl text-xs sm:text-base leading-relaxed">
           Each social outpost rendered as a commemorative postage stamp. Tap to inspect details, copy handle, or launch direct dispatch.
+          <span className="block mt-1 font-hindi text-xs sm:text-sm text-stone-600">
+            प्रत्येक डिजिटल पते को भारतीय डाक टिकट के रूप में संरक्षित किया गया है।
+          </span>
         </p>
 
         {/* Stamps Grid */}
@@ -121,15 +131,27 @@ export const SocialStamps: React.FC = () => {
 
                   {/* Stamp Top Bar: Denomination & Country */}
                   <div className="flex items-center justify-between border-b border-[#141414]/20 pb-2">
-                    <span className="font-mono-retro text-[9px] sm:text-[10px] font-bold tracking-widest text-[#141414] uppercase">
-                      INDIA POST
-                    </span>
-                    <span 
-                      className="font-rozha text-xs sm:text-sm font-black px-1.5 py-0.5 border border-[#141414] text-[#F5F2ED]"
-                      style={{ backgroundColor: stamp.color }}
-                    >
-                      {stamp.denomination}
-                    </span>
+                    <div className="flex items-baseline space-x-1">
+                      <span className="font-mono-retro text-[9px] sm:text-[10px] font-bold tracking-widest text-[#141414] uppercase">
+                        INDIA POST
+                      </span>
+                      <span className="font-hindi text-[9px] text-stone-500 font-bold">
+                        भारतीय डाक
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <span 
+                        className="font-rozha text-xs sm:text-sm font-black px-1.5 py-0.5 border border-[#141414] text-[#F5F2ED]"
+                        style={{ backgroundColor: stamp.color }}
+                      >
+                        {stamp.denomination}
+                      </span>
+                      {stamp.hindiDenomination && (
+                        <span className="font-hindi text-[10px] font-bold text-stone-700">
+                          {stamp.hindiDenomination}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {/* Stamp Center Illustrated Artwork Box */}
@@ -140,9 +162,9 @@ export const SocialStamps: React.FC = () => {
                     {/* Cancellation Postmark Overlay (Realistic angled ink stamp) */}
                     <div className="absolute top-1.5 right-1.5 border-2 border-black/35 rounded-full w-14 sm:w-16 h-14 sm:h-16 flex flex-col items-center justify-center text-black/35 -rotate-12 pointer-events-none select-none">
                       <span className="text-[5px] sm:text-[6px] font-mono-retro font-bold leading-tight">{stamp.postmarkCity}</span>
-                      <span className="text-[5px] sm:text-[6px] font-mono-retro font-bold leading-tight">{stamp.postmarkDate}</span>
+                      <span className="text-[5px] sm:text-[6px] font-hindi font-bold leading-tight">{stamp.hindiPostmark || 'नागपुर डाक'}</span>
                       <div className="w-8 sm:w-10 h-[1px] bg-black/35 my-0.5" />
-                      <span className="text-[4px] sm:text-[5px] font-mono-retro uppercase">PASSED</span>
+                      <span className="text-[4px] sm:text-[5px] font-mono-retro uppercase">PASSED · प्रमाणित</span>
                     </div>
 
                     <div 
@@ -155,6 +177,11 @@ export const SocialStamps: React.FC = () => {
                     <h3 className="font-rozha text-lg sm:text-xl font-bold text-[#141414] leading-tight">
                       {stamp.name}
                     </h3>
+                    {stamp.hindiName && (
+                      <span className="font-hindi text-[10px] text-stone-600 font-bold -mt-0.5">
+                        {stamp.hindiName}
+                      </span>
+                    )}
                     <p className="font-mono-retro text-[10px] sm:text-xs text-stone-600 font-bold mt-0.5 truncate max-w-full">
                       {stamp.handle}
                     </p>
@@ -181,7 +208,7 @@ export const SocialStamps: React.FC = () => {
                       ) : (
                         <>
                           <Copy className="w-3 h-3" />
-                          <span>COPY</span>
+                          <span>COPY · प्रतिलिपि</span>
                         </>
                       )}
                     </button>
@@ -226,6 +253,7 @@ export const SocialStamps: React.FC = () => {
                 <div className="flex items-center space-x-2 text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39] mb-2 pr-8">
                   <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span className="truncate">PHILATELIC ARCHIVE EXAMINATION</span>
+                  <span className="font-hindi text-[10px] text-stone-700">· डाक अभिलेखागार परीक्षा</span>
                 </div>
 
                 <div className="flex items-start space-x-3 sm:space-x-4 border-b-2 border-[#141414] pb-3 sm:pb-4">
@@ -236,14 +264,21 @@ export const SocialStamps: React.FC = () => {
                     {getIcon(selectedStamp.iconName)}
                   </div>
                   <div>
-                    <h3 className="font-rozha text-2xl sm:text-3xl font-black text-[#141414] leading-none">
-                      {selectedStamp.name}
-                    </h3>
+                    <div className="flex items-baseline space-x-2">
+                      <h3 className="font-rozha text-2xl sm:text-3xl font-black text-[#141414] leading-none">
+                        {selectedStamp.name}
+                      </h3>
+                      {selectedStamp.hindiName && (
+                        <span className="font-hindi text-base font-bold text-[#D95D39]">
+                          {selectedStamp.hindiName}
+                        </span>
+                      )}
+                    </div>
                     <p className="font-mono-retro text-xs sm:text-sm font-bold text-stone-600 mt-1">
                       {selectedStamp.handle}
                     </p>
                     <span className="inline-block mt-1 text-[9px] sm:text-[10px] font-mono-retro font-bold px-1.5 sm:px-2 py-0.5 bg-[#E6A92A] text-[#141414] border border-[#141414]">
-                      DENOMINATION: {selectedStamp.denomination}
+                      DENOMINATION: {selectedStamp.denomination} {selectedStamp.hindiDenomination && `(${selectedStamp.hindiDenomination})`}
                     </span>
                   </div>
                 </div>
@@ -257,7 +292,7 @@ export const SocialStamps: React.FC = () => {
                   <div className="p-2.5 sm:p-3 bg-[#F5F2ED] border border-stone-300 space-y-1 text-[11px] sm:text-xs">
                     <div className="flex justify-between">
                       <span className="text-stone-500">POSTMARK ORIGIN:</span>
-                      <strong>{selectedStamp.postmarkCity}</strong>
+                      <strong>{selectedStamp.postmarkCity} {selectedStamp.hindiPostmark && `(${selectedStamp.hindiPostmark})`}</strong>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-stone-500">ISSUE DATE:</span>

@@ -4,12 +4,15 @@ export const SOCIAL_STAMPS: SocialBadge[] = [
   {
     id: 'github',
     name: 'GitHub',
+    hindiName: 'गिटहब संकलन',
     handle: '@mastercoder91',
     url: 'https://github.com/mastercoder91',
     denomination: '₹5.00',
+    hindiDenomination: '₹५.००',
     color: '#0E3D3C', // Deep Teal
     accentColor: '#E6A92A',
     postmarkCity: 'NAGPUR G.P.O.',
+    hindiPostmark: 'नागपुर प्रधान डाकघर',
     postmarkDate: '25 AUG 88',
     category: 'code',
     description: 'Open source crafts, compilers, distributed systems, & esoteric UI experiments.',
@@ -18,12 +21,15 @@ export const SOCIAL_STAMPS: SocialBadge[] = [
   {
     id: 'x-twitter',
     name: 'X / Twitter',
+    hindiName: 'एक्स / ट्विटर',
     handle: '@AaravMaturkar',
     url: 'https://x.com/AaravMaturkar',
     denomination: '25 NP',
+    hindiDenomination: '२५ पैसे',
     color: '#D95D39', // Bold Terracotta
     accentColor: '#F5F2ED',
     postmarkCity: 'AIR MAIL / EXP.',
+    hindiPostmark: 'विमान डाक सेवा',
     postmarkDate: 'TRANSIT 1984',
     category: 'social',
     description: 'Dispatches on typography, mechanical keyboards, software architecture, & analog aesthetics.',
@@ -32,12 +38,15 @@ export const SOCIAL_STAMPS: SocialBadge[] = [
   {
     id: 'instagram',
     name: 'Instagram',
+    hindiName: 'इंस्टाग्राम छवि',
     handle: '@aaravmaturkar',
     url: 'https://www.instagram.com/aaravmaturkar/',
     denomination: '15 NP',
+    hindiDenomination: '१५ पैसे',
     color: '#8A252C', // Deep Crimson
     accentColor: '#E6A92A',
     postmarkCity: 'MADRAS REGION',
+    hindiPostmark: 'मद्रास मुहर',
     postmarkDate: 'SPECIAL ISSUE',
     category: 'social',
     description: '35mm film grain, brutalist architecture, chai stalls, and vintage bookshop finds.',
@@ -46,12 +55,15 @@ export const SOCIAL_STAMPS: SocialBadge[] = [
   {
     id: 'spotify',
     name: 'Spotify',
+    hindiName: 'स्पॉटिफ़ाई संगीत',
     handle: '@aaravmaturkar',
     url: 'https://open.spotify.com/user/314bb3mmmvzudtze44vzcxykmwaa',
     denomination: '₹2.00',
+    hindiDenomination: '₹२.००',
     color: '#164E4D', // Forest Jade / Vintage Teal
     accentColor: '#E6A92A',
     postmarkCity: 'SOUND ARCHIVES',
+    hindiPostmark: 'ध्वनि अभिलेखागार',
     postmarkDate: 'STEREO LP',
     category: 'music',
     description: '1970s Bollywood funk, Japanese ambient jazz, synthwave, & Indian classical ragas.',
@@ -60,12 +72,15 @@ export const SOCIAL_STAMPS: SocialBadge[] = [
   {
     id: 'email',
     name: 'Electronic Mail',
+    hindiName: 'सीधा पत्र व्यवहार',
     handle: 'codemaster923@gmail.com',
     url: 'mailto:codemaster923@gmail.com',
     denomination: 'EXPRESS',
+    hindiDenomination: 'द्रुत डाक',
     color: '#E6A92A', // Mustard Gold
     accentColor: '#141414',
     postmarkCity: 'DISPATCH READY',
+    hindiPostmark: 'स्पीड पोस्ट मुहर',
     postmarkDate: 'SPEED POST',
     category: 'direct',
     description: 'Direct inquiries, collaboration invitations, or a warm cup of filter coffee.',
@@ -77,6 +92,7 @@ export const VINYL_TRACKS: TrackItem[] = [
   {
     id: 'track-1',
     title: "Ananda Shankar — Jumpin'",
+    hindiTitle: "आनंद शंकर — जंपिन (सितार फ्यूज़न)",
     artist: "Ananda Shankar Orchestra",
     year: "1975",
     genre: "Indo-Psych Funk & Sitar",
@@ -88,6 +104,7 @@ export const VINYL_TRACKS: TrackItem[] = [
   {
     id: 'track-2',
     title: "Nagpur Monsoons '84",
+    hindiTitle: "नागपुर वर्षा '८४ (लो-फ़ाई राग)",
     artist: "Aarav Sound System",
     year: "1984",
     genre: "Ambient Lofi Synth",
@@ -99,6 +116,7 @@ export const VINYL_TRACKS: TrackItem[] = [
   {
     id: 'track-3',
     title: "Raga Yaman in 8-Bit Nocturne",
+    hindiTitle: "राग यमन — अष्ट-बिट रात्रि राग",
     artist: "The Midnight Archivist",
     year: "1988",
     genre: "Indo-Synthwave",
@@ -110,6 +128,7 @@ export const VINYL_TRACKS: TrackItem[] = [
   {
     id: 'track-4',
     title: "Chai & Mechanical Keyboards",
+    hindiTitle: "चाय एवं यांत्रिक कुंजीपटल",
     artist: "Late Night Terminal",
     year: "1989",
     genre: "Lofi Focus Tape",
@@ -123,7 +142,9 @@ export const VINYL_TRACKS: TrackItem[] = [
 export const CURRENTLY_LIST: CurrentlyItem[] = [
   {
     category: 'BUILDING',
+    hindiCategory: 'निर्माण',
     title: 'Kinetic Web Artifacts',
+    hindiTitle: 'गतिज वेब शिल्प',
     subtitle: 'Exploring tactile web typography, Web Audio synths, and retro digital physicalism',
     tag: 'TypeScript · CSS 3D · Canvas',
     quote: '"Make pixels feel like ink on heavyweight cotton rag."',
@@ -132,7 +153,9 @@ export const CURRENTLY_LIST: CurrentlyItem[] = [
   },
   {
     category: 'READING',
+    hindiCategory: 'पठन',
     title: 'Design as Art',
+    hindiTitle: 'कला के रूप में डिज़ाइन',
     subtitle: 'Bruno Munari & Indian Ephemera of the late 20th century',
     tag: 'Editorial History · Visual Language',
     quote: '"Complication is easy; simplification requires mastery."',
@@ -141,7 +164,9 @@ export const CURRENTLY_LIST: CurrentlyItem[] = [
   },
   {
     category: 'LISTENING',
+    hindiCategory: 'श्रवण',
     title: 'R.D. Burman & Charanjit Singh',
+    hindiTitle: 'आर. डी. बर्मन एवं चरणजीत सिंह',
     subtitle: 'Ten Ragas to a Disco Beat (1982) & Vintage HMV pressings',
     tag: 'Vinyl LP · Roland TB-303 · Analog Synths',
     quote: '"Pre-acid house invented in Nagpur before anyone knew what to call it."',
@@ -150,7 +175,9 @@ export const CURRENTLY_LIST: CurrentlyItem[] = [
   },
   {
     category: 'WATCHING',
+    hindiCategory: 'दर्शन',
     title: 'Formula 1 & Telemetry',
+    hindiTitle: 'फ़ॉर्मूला १ एवं गतिमिति',
     subtitle: 'Grand Prix race strategies, tire degradation charts, and aerodynamics analysis',
     tag: 'F1 Racing · Telemetry · High Speed',
     quote: '"Precision engineering and high-speed problem solving at 300+ km/h."',
@@ -159,7 +186,9 @@ export const CURRENTLY_LIST: CurrentlyItem[] = [
   },
   {
     category: 'EXPLORING',
+    hindiCategory: 'अन्वेषण',
     title: "playin' time",
+    hindiTitle: 'खेल व विश्राम',
     subtitle: 'having a vast collection on steam is a headache to last decades, currently playing meccha chameleon, cs2 and minecraft',
     tag: 'Steam Vault · Gaming Loop',
     quote: '"deadass."',

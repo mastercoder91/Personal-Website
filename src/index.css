@@ -8,6 +8,8 @@
     --font-sans-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-script: 'Caveat', cursive;
     --font-mono-retro: 'DM Mono', monospace;
+    --font-hindi-display: 'Rozha One', 'Yatra One', serif;
+    --font-hindi-signage: 'Yatra One', cursive, sans-serif;
   }
 
   body {
@@ -20,6 +22,12 @@
 /* Custom Typography Helpers */
 .font-rozha {
   font-family: var(--font-serif-hero);
+}
+.font-yatra {
+  font-family: var(--font-hindi-signage);
+}
+.font-hindi {
+  font-family: var(--font-hindi-display);
 }
 .font-display {
   font-family: var(--font-serif-display);

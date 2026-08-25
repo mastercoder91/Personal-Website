@@ -50,11 +50,14 @@ export const EasterEggVault: React.FC<EasterEggVaultProps> = ({ isOpen, onClose 
               </div>
               <div>
                 <span className="text-[9px] sm:text-[10px] text-[#E6A92A] font-bold tracking-widest uppercase">
-                  ● SECRET STUDIO ARTIFACT
+                  ● SECRET STUDIO ARTIFACT · गुप्त ध्वनि कार्यशाला
                 </span>
                 <h3 className="font-rozha text-xl sm:text-3xl font-black text-[#F5F2ED] leading-tight">
                   1984 NAGPUR BEAT MACHINE
                 </h3>
+                <span className="font-hindi text-xs sm:text-sm text-[#E6A92A] font-bold block">
+                  ॥ १९८४ नागपुर ताल एवं स्वर यंत्र ॥
+                </span>
               </div>
             </div>
 
@@ -85,6 +88,7 @@ export const EasterEggVault: React.FC<EasterEggVaultProps> = ({ isOpen, onClose 
             >
               <span className="text-[9px] sm:text-[10px] text-[#E6A92A] font-bold">[1] KICK</span>
               <span className="font-rozha text-base sm:text-xl text-white font-bold mt-0.5 sm:mt-1">ANALOG KICK</span>
+              <span className="font-hindi text-xs text-[#F5F2ED] font-bold mt-0.5">धम (ताल)</span>
               <span className="text-[8px] sm:text-[9px] text-stone-400">808 Low-End</span>
             </button>
 
@@ -98,6 +102,7 @@ export const EasterEggVault: React.FC<EasterEggVaultProps> = ({ isOpen, onClose 
             >
               <span className="text-[9px] sm:text-[10px] text-[#E6A92A] font-bold">[2] SNARE</span>
               <span className="font-rozha text-base sm:text-xl text-white font-bold mt-0.5 sm:mt-1">RETRO SNARE</span>
+              <span className="font-hindi text-xs text-[#F5F2ED] font-bold mt-0.5">छन (झांझ)</span>
               <span className="text-[8px] sm:text-[9px] text-stone-400">Noise Crack</span>
             </button>
 
@@ -111,6 +116,7 @@ export const EasterEggVault: React.FC<EasterEggVaultProps> = ({ isOpen, onClose 
             >
               <span className="text-[9px] sm:text-[10px] text-[#D95D39] font-bold">[3] HI-HAT</span>
               <span className="font-rozha text-base sm:text-xl text-white font-bold mt-0.5 sm:mt-1">8-BIT HAT</span>
+              <span className="font-hindi text-xs text-[#F5F2ED] font-bold mt-0.5">टंकार</span>
               <span className="text-[8px] sm:text-[9px] text-stone-400">Metallic Tock</span>
             </button>
 
@@ -124,6 +130,7 @@ export const EasterEggVault: React.FC<EasterEggVaultProps> = ({ isOpen, onClose 
             >
               <span className="text-[9px] sm:text-[10px] text-[#E6A92A] font-bold">[4] CHORD</span>
               <span className="font-rozha text-base sm:text-xl text-white font-bold mt-0.5 sm:mt-1">DISCO CHORD</span>
+              <span className="font-hindi text-xs text-[#F5F2ED] font-bold mt-0.5">राग स्वर</span>
               <span className="text-[8px] sm:text-[9px] text-stone-400">Synth Stab</span>
             </button>
           </div>

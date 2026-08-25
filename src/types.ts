@@ -11,12 +11,15 @@ export type ScreenEffectMode =
 export interface SocialBadge {
   id: string;
   name: string;
+  hindiName?: string;
   handle: string;
   url: string;
   denomination: string; // e.g. "₹2.50", "25 NP", "50 NP"
+  hindiDenomination?: string;
   color: string;
   accentColor: string;
   postmarkCity: string;
+  hindiPostmark?: string;
   postmarkDate: string;
   category: 'code' | 'social' | 'music' | 'writing' | 'direct';
   description: string;
@@ -26,6 +29,7 @@ export interface SocialBadge {
 export interface TrackItem {
   id: string;
   title: string;
+  hindiTitle?: string;
   artist: string;
   year: string;
   genre: string;
@@ -48,7 +52,9 @@ export interface GuestbookEntry {
 
 export interface CurrentlyItem {
   category: 'READING' | 'BUILDING' | 'LISTENING' | 'SIPPING' | 'EXPLORING' | 'WATCHING' | string;
+  hindiCategory?: string;
   title: string;
+  hindiTitle?: string;
   subtitle: string;
   tag: string;
   quote?: string;

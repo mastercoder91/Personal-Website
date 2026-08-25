@@ -97,9 +97,15 @@ export const NowPlayingCassette: React.FC = () => {
               <span>SECTION 03</span>
               <span>—</span>
               <span>ANALOG SOUND ENGINE</span>
+              <span className="font-hindi text-[10px] sm:text-xs text-[#141414] font-bold">
+                (अध्याय ०३ : ध्वनि यंत्र एवं राग)
+              </span>
             </div>
-            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1">
-              TURNTABLE & CASSETTE DECK
+            <h2 className="font-rozha text-3xl sm:text-5xl md:text-6xl text-[#141414] font-black tracking-tight mt-1 flex flex-wrap items-baseline gap-2">
+              <span>TURNTABLE & CASSETTE DECK</span>
+              <span className="font-hindi text-xl sm:text-2xl md:text-3xl text-[#D95D39] font-bold">
+                ॥ एनालॉग टर्नटेबल एवं कैसेट डेक ॥
+              </span>
             </h2>
           </div>
 
@@ -114,7 +120,8 @@ export const NowPlayingCassette: React.FC = () => {
                   : 'bg-[#FFFFFF] text-[#141414] hover:bg-[#F5F2ED]'
               }`}
             >
-              33⅓ RPM TURNTABLE
+              <span>33⅓ RPM TURNTABLE</span>
+              <span className="font-hindi text-[10px] ml-1">· ग्रामोफोन</span>
             </button>
             <button
               onClick={() => switchMode('cassette')}
@@ -125,7 +132,8 @@ export const NowPlayingCassette: React.FC = () => {
                   : 'bg-[#FFFFFF] text-[#141414] hover:bg-[#F5F2ED]'
               }`}
             >
-              CASSETTE TAPE
+              <span>CASSETTE TAPE</span>
+              <span className="font-hindi text-[10px] ml-1">· कैसेट</span>
             </button>
           </div>
         </div>
@@ -253,12 +261,17 @@ export const NowPlayingCassette: React.FC = () => {
           <div className="lg:col-span-5 space-y-4 sm:space-y-6">
             <div>
               <span className="px-2 py-0.5 bg-[#E6A92A]/30 text-[#141414] border border-[#141414] text-[9px] sm:text-[10px] font-mono-retro font-bold uppercase">
-                TRACK {currentTrackIndex + 1} OF {VINYL_TRACKS.length}
+                TRACK {currentTrackIndex + 1} OF {VINYL_TRACKS.length} · रचना {currentTrackIndex + 1}
               </span>
               <h3 className="font-rozha text-2xl sm:text-3xl font-black text-[#141414] leading-tight mt-1.5 sm:mt-2">
                 {currentTrack.title}
               </h3>
-              <p className="font-mono-retro text-xs font-bold text-[#0E3D3C]">
+              {currentTrack.hindiTitle && (
+                <p className="font-hindi text-sm text-[#D95D39] font-bold mt-0.5">
+                  {currentTrack.hindiTitle}
+                </p>
+              )}
+              <p className="font-mono-retro text-xs font-bold text-[#0E3D3C] mt-1">
                 {currentTrack.artist} · ({currentTrack.year})
               </p>
             </div>
@@ -315,7 +328,7 @@ export const NowPlayingCassette: React.FC = () => {
                 }`}
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" /> : <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />}
-                <span>{isPlaying ? 'PAUSE SYNTH' : 'ENGAGE PLAYBACK'}</span>
+                <span>{isPlaying ? 'PAUSE · संगीत विराम' : 'PLAY · संगीत प्रारंभ'}</span>
               </button>
 
               <button
@@ -330,9 +343,14 @@ export const NowPlayingCassette: React.FC = () => {
 
             {/* Track Selection Pill Badges */}
             <div className="space-y-1.5">
-              <span className="text-[9px] sm:text-[10px] font-mono-retro text-stone-500 uppercase font-bold">
-                PRESSINGS IN ARCHIVE:
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] sm:text-[10px] font-mono-retro text-stone-500 uppercase font-bold">
+                  PRESSINGS IN ARCHIVE:
+                </span>
+                <span className="font-hindi text-[10px] text-stone-600 font-bold">
+                  संग्रहीत राग व ध्वनियां
+                </span>
+              </div>
               <div className="space-y-1">
                 {VINYL_TRACKS.map((track, idx) => (
                   <button
@@ -356,7 +374,10 @@ export const NowPlayingCassette: React.FC = () => {
                         : 'bg-[#F5F2ED] text-[#141414] border-stone-300 hover:bg-[#FFFFFF]'
                     }`}
                   >
-                    <span className="truncate pr-2">0{idx + 1}. {track.title}</span>
+                    <div className="flex items-center space-x-1.5 truncate pr-2">
+                      <span className="font-bold">0{idx + 1}.</span>
+                      <span className="truncate">{track.title}</span>
+                    </div>
                     <span className="text-[9px] sm:text-[10px] text-[#E6A92A] font-bold shrink-0">{track.genre}</span>
                   </button>
                 ))}
