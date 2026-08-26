@@ -101,10 +101,10 @@ export const Guestbook: React.FC = () => {
   };
 
   return (
-    <section id="guestbook" className="py-10 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+    <section id="guestbook" className="py-10 sm:py-16 md:py-24 border-b-2 border-[#141414] bg-[#F5F2ED] relative">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b-2 border-[#141414]">
           <div>
             <div className="flex items-center space-x-2 text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-widest">
               <span>SECTION 05</span>
@@ -123,7 +123,7 @@ export const Guestbook: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
+            <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] text-[10px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
               <Stamp className="w-3.5 h-3.5" />
               <span>{entries.length} STAMPED ENTRIES</span>
               <span className="font-hindi text-[10px] text-[#141414]">· {entries.length} प्रविष्टियां</span>
@@ -134,7 +134,7 @@ export const Guestbook: React.FC = () => {
         {/* Two Columns: Typewriter Station (Left) & Stamped Ledger Board (Right) */}
         <div className="mt-6 sm:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left 5 Cols: Typewriter Dispatch Terminal */}
-          <div className="lg:col-span-5 bg-[#FFFFFF] border-2 sm:border-4 border-[#141414] p-4 sm:p-7 shadow-[4px_4px_0px_#141414] sm:shadow-[8px_8px_0px_#141414]">
+          <div className="lg:col-span-5 bg-[#FFFFFF] border-2 border-[#141414] p-4 sm:p-7 shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414]">
             <div className="flex items-center justify-between border-b-2 border-[#141414] pb-2.5 sm:pb-3 mb-3 sm:mb-4">
               <div className="flex items-center space-x-2">
                 <Feather className="w-4 h-4 sm:w-5 sm:h-5 text-[#D95D39]" />

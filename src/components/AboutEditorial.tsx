@@ -42,13 +42,13 @@ export const AboutEditorial: React.FC = () => {
   ];
 
   return (
-    <section id="manifesto" className="py-8 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+    <section id="manifesto" className="py-8 sm:py-16 md:py-24 border-b-2 border-[#141414] bg-[#F5F2ED] relative">
       {/* Background Halftone grid */}
-      <div className="absolute inset-0 bg-halftone opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 bg-halftone opacity-25 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 relative z-10">
         {/* Section Header with Issue stamp */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 border-[#141414]">
           <div>
             <div className="flex items-center space-x-1.5 sm:space-x-2 text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-wider sm:tracking-widest">
               <span>SECTION 01</span>
@@ -80,7 +80,7 @@ export const AboutEditorial: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 mt-5 sm:mt-10 items-start">
           {/* Left Main Article Column with Drop Cap */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-6 md:p-8 shadow-[3px_3px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] relative">
+            <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-6 md:p-8 shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] relative">
               {/* Top Accent Stamp */}
               <div className="absolute -top-3 left-3 sm:left-6 bg-[#D95D39] text-[#F5F2ED] px-2 sm:px-3 py-0.5 text-[8px] sm:text-[10px] font-mono-retro font-bold uppercase tracking-wider border border-[#141414] flex items-center space-x-1 sm:space-x-1.5">
                 <span>EDITORIAL ESSAY</span>

@@ -58,38 +58,38 @@ section {
 
 /* Hard Text Shadows for Bold Typography Display */
 .text-shadow-gold {
-  text-shadow: 6px 6px 0px #E6A92A;
+  text-shadow: 3px 3px 0px #E6A92A;
 }
 .text-shadow-gold-lg {
-  text-shadow: 8px 8px 0px #E6A92A;
+  text-shadow: 4px 4px 0px #E6A92A;
 }
 .text-shadow-ink {
-  text-shadow: 6px 6px 0px #141414;
+  text-shadow: 3px 3px 0px #141414;
 }
 .text-shadow-terracotta {
-  text-shadow: 6px 6px 0px #D95D39;
+  text-shadow: 3px 3px 0px #D95D39;
 }
 
-/* Bold Typography Radial Dot Pattern & Noise */
+/* Bold Typography Radial Dot Pattern & Noise - Subtle & Clean */
 .bg-bold-canvas {
   background-color: #F5F2ED;
-  background-image: radial-gradient(#141414 0.6px, transparent 0.6px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(20, 20, 20, 0.04) 0.8px, transparent 0.8px);
+  background-size: 28px 28px;
 }
 
 .bg-halftone {
-  background-image: radial-gradient(rgba(20, 20, 20, 0.08) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(rgba(20, 20, 20, 0.035) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
 .bg-halftone-dense {
-  background-image: radial-gradient(rgba(217, 93, 57, 0.14) 1.5px, transparent 1.5px);
-  background-size: 10px 10px;
+  background-image: radial-gradient(rgba(217, 93, 57, 0.06) 1.2px, transparent 1.2px);
+  background-size: 12px 12px;
 }
 
 .bg-vintage-grid {
-  background-image: linear-gradient(to right, rgba(20, 20, 20, 0.06) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(20, 20, 20, 0.06) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(20, 20, 20, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(20, 20, 20, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

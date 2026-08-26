@@ -189,7 +189,7 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#F5F2ED]/95 backdrop-blur-md border-b-2 sm:border-b-4 border-[#141414]">
+      <header className="sticky top-0 z-40 bg-[#F5F2ED]/95 backdrop-blur-md border-b-2 border-[#141414]">
         {/* Top micro-meta banner */}
         <div className="bg-[#141414] text-[#F5F2ED] px-2.5 sm:px-4 py-0.5 sm:py-1.5 text-[8px] sm:text-[11px] font-mono-retro flex items-center justify-between gap-1.5 sm:gap-2 border-b border-[#141414] overflow-hidden">
           <div className="flex items-center space-x-1.5 sm:space-x-3 truncate">

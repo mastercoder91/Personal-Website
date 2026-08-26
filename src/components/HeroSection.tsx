@@ -125,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           {/* Card 1: Angled Terracotta Personality Card */}
           <motion.div
             whileHover={{ rotate: 0, scale: 1.02 }}
-            className="bg-[#D95D39] p-4 sm:p-6 text-[#F5F2ED] border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden sm:-rotate-1 sm:hover:rotate-0"
+            className="bg-[#D95D39] p-4 sm:p-6 text-[#F5F2ED] border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] flex flex-col justify-between relative overflow-hidden sm:-rotate-1 sm:hover:rotate-0"
           >
             <div>
               <div className="flex items-center justify-between border-b border-[#F5F2ED]/40 pb-1.5 sm:pb-2 mb-2 sm:mb-3">
@@ -165,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </motion.div>
 
           {/* Card 2: Interactive Social Postage Stamps Cluster */}
-          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-5 shadow-[3px_3px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between">
+          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-5 shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] flex flex-col justify-between">
             <div className="flex items-center justify-between border-b border-stone-200 pb-1.5 sm:pb-2 mb-2 sm:mb-3">
               <div className="flex items-center space-x-1.5">
                 <span className="text-[10px] sm:text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">
@@ -184,12 +184,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
             <div className="grid grid-cols-2 gap-1.5 sm:gap-3 my-1.5 sm:my-2">
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-300 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-none hover:border-[#141414] transition-all relative group"
               >
-                <div className="w-full h-7 sm:h-10 bg-[#D95D39]/20 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
+                <div className="w-full h-7 sm:h-10 bg-[#D95D39]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
                   𝕏
                 </div>
-                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-0.5 sm:pt-1 truncate">
+                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-300 w-full pt-0.5 sm:pt-1 truncate">
                   @AaravMaturkar
                 </div>
                 <div className="absolute -right-1 -top-1 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#E6A92A] rotate-45" />
@@ -197,36 +197,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
 
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-300 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-none hover:border-[#141414] transition-all relative group"
               >
-                <div className="w-full h-7 sm:h-10 bg-[#0E3D3C]/20 flex items-center justify-center font-bold text-xs sm:text-sm text-[#0E3D3C]">
+                <div className="w-full h-7 sm:h-10 bg-[#0E3D3C]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#0E3D3C]">
                   📸
                 </div>
-                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-0.5 sm:pt-1 truncate">
+                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-300 w-full pt-0.5 sm:pt-1 truncate">
                   @aaravmaturkar
                 </div>
               </button>
 
               <button
                 onClick={() => onScrollToSection('stamps')}
-                className="bg-[#F5F2ED] border border-gray-400 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group"
+                className="bg-[#F5F2ED] border border-gray-300 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-none hover:border-[#141414] transition-all relative group"
               >
-                <div className="w-full h-7 sm:h-10 bg-[#141414]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#141414]">
+                <div className="w-full h-7 sm:h-10 bg-[#141414]/10 flex items-center justify-center font-bold text-xs sm:text-sm text-[#141414]">
                   💻
                 </div>
-                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-0.5 sm:pt-1 truncate">
+                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-300 w-full pt-0.5 sm:pt-1 truncate">
                   @mastercoder91
                 </div>
               </button>
 
               <a
                 href="mailto:codemaster923@gmail.com"
-                className="bg-[#F5F2ED] border border-gray-400 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-sm hover:rotate-0 transition-transform relative group text-left"
+                className="bg-[#F5F2ED] border border-gray-300 p-1.5 sm:p-2 flex flex-col items-center justify-between shadow-none hover:border-[#141414] transition-all relative group text-left"
               >
-                <div className="w-full h-7 sm:h-10 bg-[#D95D39]/15 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
+                <div className="w-full h-7 sm:h-10 bg-[#D95D39]/10 flex items-center justify-center font-bold text-xs sm:text-sm text-[#D95D39]">
                   📧
                 </div>
-                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-400 w-full pt-0.5 sm:pt-1 truncate">
+                <div className="text-[8px] sm:text-[10px] uppercase font-mono-retro font-bold text-center border-t border-dotted border-gray-300 w-full pt-0.5 sm:pt-1 truncate">
                   Direct Mail
                 </div>
               </a>
@@ -243,7 +243,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </div>
 
           {/* Card 3: Interactive Vinyl Record Deck Highlight */}
-          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-5 shadow-[3px_3px_0px_#141414] sm:shadow-[8px_8px_0px_#141414] flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-[#FFFFFF] border-2 border-[#141414] p-3.5 sm:p-5 shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between border-b border-stone-200 pb-1.5 sm:pb-2 mb-1.5 sm:mb-2">
               <div className="flex items-center space-x-1.5">
                 <span className="text-[10px] sm:text-[11px] font-mono-retro font-bold uppercase tracking-widest text-[#141414]">

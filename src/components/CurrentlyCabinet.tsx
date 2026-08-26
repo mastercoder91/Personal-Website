@@ -28,10 +28,10 @@ export const CurrentlyCabinet: React.FC = () => {
   };
 
   return (
-    <section id="curiosities" className="py-8 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+    <section id="curiosities" className="py-8 sm:py-16 md:py-24 border-b-2 border-[#141414] bg-[#F5F2ED] relative">
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 border-[#141414]">
           <div>
             <div className="flex items-center space-x-1.5 sm:space-x-2 text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-wider sm:tracking-widest">
               <span>SECTION 04</span>

@@ -56,10 +56,10 @@ export const SocialStamps: React.FC = () => {
   };
 
   return (
-    <section id="stamps" className="py-8 sm:py-16 md:py-24 border-b-2 sm:border-b-4 border-[#141414] bg-[#F5F2ED] relative">
+    <section id="stamps" className="py-8 sm:py-16 md:py-24 border-b-2 border-[#141414] bg-[#F5F2ED] relative">
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 sm:border-b-4 border-[#141414]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-4 pb-3.5 sm:pb-6 border-b-2 border-[#141414]">
           <div>
             <div className="flex items-center space-x-1.5 sm:space-x-2 text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39] uppercase tracking-wider sm:tracking-widest">
               <span>SECTION 02</span>
@@ -78,7 +78,7 @@ export const SocialStamps: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
+            <span className="inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#FFFFFF] border-2 border-[#141414] shadow-[2px_2px_0px_#141414] text-[9px] sm:text-xs font-mono-retro font-bold text-[#D95D39]">
               <Stamp className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               <span>5 OFFICIAL EDITIONS</span>
               <span className="font-hindi text-[9px] sm:text-[10px] text-[#141414]">· ५ डाक संस्करण</span>
@@ -106,8 +106,8 @@ export const SocialStamps: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.05 }}
                 whileHover={{ 
-                  y: -6, 
-                  rotate: idx % 2 === 0 ? 1.5 : -1.5,
+                  y: -4, 
+                  rotate: idx % 2 === 0 ? 1 : -1,
                   scale: 1.01
                 }}
                 onClick={() => openModal(stamp)}
@@ -116,7 +116,7 @@ export const SocialStamps: React.FC = () => {
               >
                 {/* Perforated Postage Stamp Outer Body */}
                 <div 
-                  className="p-3.5 sm:p-5 rounded-none border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[6px_6px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[230px] sm:min-h-[300px]"
+                  className="p-3.5 sm:p-5 rounded-none border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[230px] sm:min-h-[300px]"
                   style={{
                     backgroundColor: '#FFFFFF',
                     backgroundImage: `radial-gradient(circle at top left, transparent 6px, #FFFFFF 6px), 
