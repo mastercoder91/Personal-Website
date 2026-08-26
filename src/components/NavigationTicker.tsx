@@ -371,34 +371,34 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
         </div>
 
         {/* Mobile Horizontal Quick-Jump Pill Strip */}
-        <div className="lg:hidden bg-[#F5F2ED] border-t border-[#141414]/20 px-3 py-1.5 overflow-x-auto flex items-center space-x-2 text-[10px] font-mono-retro font-bold text-[#141414] no-scrollbar">
+        <div className="lg:hidden bg-[#F5F2ED] border-t border-[#141414]/15 px-2.5 py-1 overflow-x-auto flex items-center space-x-1.5 text-[9px] font-mono-retro font-bold text-[#141414] no-scrollbar">
           <button
             onClick={() => scrollToSection('manifesto')}
-            className="whitespace-nowrap px-2.5 py-1 bg-[#FFFFFF] border border-[#141414] shadow-[1px_1px_0px_#141414] active:bg-[#E6A92A]/30"
+            className="whitespace-nowrap px-2 py-0.5 bg-[#FFFFFF] border border-[#141414]/30 hover:border-[#141414] active:bg-[#E6A92A]/20 transition-colors"
           >
             01. MANIFESTO
           </button>
           <button
             onClick={() => scrollToSection('stamps')}
-            className="whitespace-nowrap px-2.5 py-1 bg-[#FFFFFF] border border-[#141414] shadow-[1px_1px_0px_#141414] active:bg-[#E6A92A]/30"
+            className="whitespace-nowrap px-2 py-0.5 bg-[#FFFFFF] border border-[#141414]/30 hover:border-[#141414] active:bg-[#E6A92A]/20 transition-colors"
           >
             02. STAMPS
           </button>
           <button
             onClick={() => scrollToSection('turntable')}
-            className="whitespace-nowrap px-2.5 py-1 bg-[#FFFFFF] border border-[#141414] shadow-[1px_1px_0px_#141414] active:bg-[#E6A92A]/30"
+            className="whitespace-nowrap px-2 py-0.5 bg-[#FFFFFF] border border-[#141414]/30 hover:border-[#141414] active:bg-[#E6A92A]/20 transition-colors"
           >
             03. SOUND
           </button>
           <button
             onClick={() => scrollToSection('curiosities')}
-            className="whitespace-nowrap px-2.5 py-1 bg-[#FFFFFF] border border-[#141414] shadow-[1px_1px_0px_#141414] active:bg-[#E6A92A]/30"
+            className="whitespace-nowrap px-2 py-0.5 bg-[#FFFFFF] border border-[#141414]/30 hover:border-[#141414] active:bg-[#E6A92A]/20 transition-colors"
           >
             04. CABINET
           </button>
           <button
             onClick={() => scrollToSection('guestbook')}
-            className="whitespace-nowrap px-2.5 py-1 bg-[#D95D39] text-[#F5F2ED] border border-[#141414] shadow-[1px_1px_0px_#141414] active:bg-[#C04C2A]"
+            className="whitespace-nowrap px-2 py-0.5 bg-[#D95D39] text-[#F5F2ED] border border-[#141414] active:bg-[#C04C2A] transition-colors"
           >
             05. GUESTBOOK
           </button>

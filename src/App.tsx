@@ -111,8 +111,8 @@ export default function App() {
         />
 
         {/* 3D Vinyl Sleeve Showcase Section */}
-        <section className="py-12 bg-[#F5F2ED] border-b-4 border-[#141414] relative bg-vintage-grid">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <section className="py-6 sm:py-12 bg-[#F5F2ED] border-b-2 sm:border-b-4 border-[#141414] relative bg-vintage-grid overflow-hidden">
+          <div className="max-w-7xl mx-auto px-2.5 sm:px-6">
             <VinylSleeveCard />
           </div>
         </section>

@@ -112,7 +112,7 @@ export function IndianMascot({ onOpenGuestbook, onOpenEasterEgg }: IndianMascotP
     <aside 
       id="site-mascot-container"
       aria-label="Site mascot Chhote Ustad"
-      className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-40 select-none print:hidden pointer-events-auto"
+      className="fixed bottom-2.5 right-2.5 sm:bottom-5 sm:right-5 z-40 select-none print:hidden pointer-events-auto"
     >
       <AnimatePresence mode="wait">
         {isMinimized ? (
@@ -130,22 +130,22 @@ export function IndianMascot({ onOpenGuestbook, onOpenEasterEgg }: IndianMascotP
               setIsMinimized(false);
               setShowBubble(true);
             }}
-            className="flex items-center space-x-2 bg-[#D95D39] text-[#F5F2ED] px-3 py-2 border-2 border-[#141414] shadow-[4px_4px_0px_#141414] cursor-pointer group"
+            className="flex items-center space-x-1.5 sm:space-x-2 bg-[#D95D39] text-[#F5F2ED] px-2 sm:px-3 py-1.5 sm:py-2 border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] cursor-pointer group"
             title="Open Chhote Ustad (छोटे उस्ताद)"
           >
             {/* Mascot Mini Portrait Icon */}
-            <div className="w-7 h-7 rounded-full bg-[#E6A92A] border border-[#141414] flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
-              <span className="text-base">👳🏽‍♂️</span>
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#E6A92A] border border-[#141414] flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+              <span className="text-sm sm:text-base">👳🏽‍♂️</span>
             </div>
             <div className="text-left font-mono-retro">
-              <div className="text-[10px] font-bold tracking-wider uppercase leading-none">
+              <div className="text-[9px] sm:text-[10px] font-bold tracking-wider uppercase leading-none">
                 CHHOTE USTAD
               </div>
-              <div className="text-[9px] font-hindi text-[#E6A92A] font-bold leading-tight">
-                छोटे उस्ताद · नमस्ते
+              <div className="text-[8px] sm:text-[9px] font-hindi text-[#E6A92A] font-bold leading-tight">
+                छोटे उस्ताद
               </div>
             </div>
-            <Maximize2 className="w-3.5 h-3.5 ml-1 opacity-75 group-hover:opacity-100 transition-opacity" />
+            <Maximize2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 ml-0.5 opacity-75 group-hover:opacity-100 transition-opacity" />
           </motion.button>
         ) : (
           /* Full Mascot Container */
@@ -164,7 +164,7 @@ export function IndianMascot({ onOpenGuestbook, onOpenEasterEgg }: IndianMascotP
                   initial={{ opacity: 0, y: 10, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 5, scale: 0.9 }}
-                  className="mb-2 max-w-[260px] sm:max-w-[300px] bg-[#FFFFFF] border-2 border-[#141414] p-3 shadow-[4px_4px_0px_#141414] relative text-left"
+                  className="mb-2 max-w-[calc(100vw-24px)] min-[360px]:max-w-[260px] sm:max-w-[300px] bg-[#FFFFFF] border-2 border-[#141414] p-2.5 sm:p-3 shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] relative text-left"
                 >
                   {/* Decorative Stamp Header */}
                   <div className="flex items-center justify-between border-b border-[#141414]/20 pb-1 mb-1.5 text-[9px] font-mono-retro font-bold text-[#D95D39]">
