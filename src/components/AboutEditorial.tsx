@@ -124,20 +124,20 @@ export const AboutEditorial: React.FC = () => {
               </div>
 
               {/* Quick stats / credentials row */}
-              <div className="grid grid-cols-3 gap-1 sm:gap-2 pt-2.5 sm:pt-4 border-t border-stone-200 text-center font-mono-retro">
-                <div className="p-1 sm:p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-[11px] min-[360px]:text-xs sm:text-base text-[#D95D39] font-bold leading-tight flex items-center justify-center min-h-[24px] sm:min-h-[32px]">
-                    ig some months
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 pt-2.5 sm:pt-4 border-t border-stone-200 text-center font-mono-retro">
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300 flex flex-col justify-center">
+                  <div className="font-rozha text-xs sm:text-base text-[#D95D39] font-bold leading-tight flex items-center justify-center">
+                    Dev Explorer
                   </div>
-                  <div className="text-[6px] min-[360px]:text-[7px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">into dev journey ✌🏻</div>
+                  <div className="text-[7.5px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight mt-0.5">Code & Systems ✌🏻</div>
                 </div>
-                <div className="p-1 sm:p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-base sm:text-2xl text-[#0E3D3C] font-bold">100%</div>
-                  <div className="text-[6px] min-[360px]:text-[7px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">Independent Spirit</div>
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300 flex flex-col justify-center">
+                  <div className="font-rozha text-sm sm:text-2xl text-[#0E3D3C] font-bold">100%</div>
+                  <div className="text-[7.5px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight mt-0.5">Independent Spirit</div>
                 </div>
-                <div className="p-1 sm:p-2 bg-[#F5F2ED] border border-stone-300">
-                  <div className="font-rozha text-base sm:text-2xl text-[#E6A92A] font-bold">∞</div>
-                  <div className="text-[6px] min-[360px]:text-[7px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight">Curiosity & Craft</div>
+                <div className="p-1.5 sm:p-2 bg-[#F5F2ED] border border-stone-300 flex flex-col justify-center">
+                  <div className="font-rozha text-sm sm:text-2xl text-[#E6A92A] font-bold">∞</div>
+                  <div className="text-[7.5px] sm:text-[9px] uppercase text-stone-600 font-bold leading-tight mt-0.5">Curiosity & Craft</div>
                 </div>
               </div>
             </div>
@@ -168,7 +168,8 @@ export const AboutEditorial: React.FC = () => {
                   <motion.button
                     key={idx}
                     onClick={() => {
-                      audio.playClick(400 + idx * 70);
+                      const notes = [440.00, 523.25, 587.33, 659.25];
+                      audio.playClick(notes[idx % notes.length]);
                       setActivePillar(idx);
                     }}
                     whileHover={{ x: 4 }}

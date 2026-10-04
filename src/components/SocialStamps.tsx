@@ -93,8 +93,8 @@ export const SocialStamps: React.FC = () => {
           </span>
         </p>
 
-        {/* Stamps Grid */}
-        <div className="grid grid-cols-1 min-[440px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6 md:gap-8 mt-5 sm:mt-10">
+        {/* Desktop Stamps Grid (Unchanged on Desktop) */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-10">
           {SOCIAL_STAMPS.map((stamp, idx) => {
             const isCopied = copiedId === stamp.id;
 
@@ -116,7 +116,7 @@ export const SocialStamps: React.FC = () => {
               >
                 {/* Perforated Postage Stamp Outer Body */}
                 <div 
-                  className="p-3.5 sm:p-5 rounded-none border-2 border-[#141414] shadow-[3px_3px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[230px] sm:min-h-[300px]"
+                  className="p-5 rounded-none border-2 border-[#141414] shadow-[4px_4px_0px_#141414] transition-all relative overflow-hidden flex flex-col justify-between min-h-[300px]"
                   style={{
                     backgroundColor: '#FFFFFF',
                     backgroundImage: `radial-gradient(circle at top left, transparent 6px, #FFFFFF 6px), 
@@ -132,7 +132,7 @@ export const SocialStamps: React.FC = () => {
                   {/* Stamp Top Bar: Denomination & Country */}
                   <div className="flex items-center justify-between border-b border-[#141414]/20 pb-2">
                     <div className="flex items-baseline space-x-1">
-                      <span className="font-mono-retro text-[9px] sm:text-[10px] font-bold tracking-widest text-[#141414] uppercase">
+                      <span className="font-mono-retro text-[10px] font-bold tracking-widest text-[#141414] uppercase">
                         INDIA POST
                       </span>
                       <span className="font-hindi text-[9px] text-stone-500 font-bold">
@@ -141,7 +141,7 @@ export const SocialStamps: React.FC = () => {
                     </div>
                     <div className="flex items-center space-x-1">
                       <span 
-                        className="font-rozha text-xs sm:text-sm font-black px-1.5 py-0.5 border border-[#141414] text-[#F5F2ED]"
+                        className="font-rozha text-sm font-black px-1.5 py-0.5 border border-[#141414] text-[#F5F2ED]"
                         style={{ backgroundColor: stamp.color }}
                       >
                         {stamp.denomination}
@@ -156,25 +156,25 @@ export const SocialStamps: React.FC = () => {
 
                   {/* Stamp Center Illustrated Artwork Box */}
                   <div 
-                    className="my-2.5 sm:my-3 p-3 sm:p-4 border-2 border-dashed border-[#141414]/30 flex flex-col items-center justify-center text-center relative overflow-hidden transition-transform group-hover:scale-[1.02]"
+                    className="my-3 p-4 border-2 border-dashed border-[#141414]/30 flex flex-col items-center justify-center text-center relative overflow-hidden transition-transform group-hover:scale-[1.02]"
                     style={{ backgroundColor: `${stamp.color}15` }}
                   >
                     {/* Cancellation Postmark Overlay (Realistic angled ink stamp) */}
-                    <div className="absolute top-1.5 right-1.5 border-2 border-black/35 rounded-full w-14 sm:w-16 h-14 sm:h-16 flex flex-col items-center justify-center text-black/35 -rotate-12 pointer-events-none select-none">
-                      <span className="text-[5px] sm:text-[6px] font-mono-retro font-bold leading-tight">{stamp.postmarkCity}</span>
-                      <span className="text-[5px] sm:text-[6px] font-hindi font-bold leading-tight">{stamp.hindiPostmark || 'नागपुर डाक'}</span>
-                      <div className="w-8 sm:w-10 h-[1px] bg-black/35 my-0.5" />
-                      <span className="text-[4px] sm:text-[5px] font-mono-retro uppercase">PASSED · प्रमाणित</span>
+                    <div className="absolute top-1.5 right-1.5 border-2 border-black/35 rounded-full w-16 h-16 flex flex-col items-center justify-center text-black/35 -rotate-12 pointer-events-none select-none">
+                      <span className="text-[6px] font-mono-retro font-bold leading-tight">{stamp.postmarkCity}</span>
+                      <span className="text-[6px] font-hindi font-bold leading-tight">{stamp.hindiPostmark || 'नागपुर डाक'}</span>
+                      <div className="w-10 h-[1px] bg-black/35 my-0.5" />
+                      <span className="text-[5px] font-mono-retro uppercase">PASSED · प्रमाणित</span>
                     </div>
 
                     <div 
-                      className="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center text-[#F5F2ED] shadow-md border-2 border-[#141414] mb-1.5 sm:mb-2"
+                      className="w-12 h-12 flex items-center justify-center text-[#F5F2ED] shadow-md border-2 border-[#141414] mb-2"
                       style={{ backgroundColor: stamp.color }}
                     >
                       {getIcon(stamp.iconName)}
                     </div>
 
-                    <h3 className="font-rozha text-lg sm:text-xl font-bold text-[#141414] leading-tight">
+                    <h3 className="font-rozha text-xl font-bold text-[#141414] leading-tight">
                       {stamp.name}
                     </h3>
                     {stamp.hindiName && (
@@ -182,13 +182,13 @@ export const SocialStamps: React.FC = () => {
                         {stamp.hindiName}
                       </span>
                     )}
-                    <p className="font-mono-retro text-[10px] sm:text-xs text-stone-600 font-bold mt-0.5 truncate max-w-full">
+                    <p className="font-mono-retro text-xs text-stone-600 font-bold mt-0.5 truncate max-w-full">
                       {stamp.handle}
                     </p>
                   </div>
 
                   {/* Stamp Description / Category */}
-                  <p className="text-[11px] sm:text-xs text-stone-700 font-sans line-clamp-2 leading-relaxed mb-2.5 sm:mb-3">
+                  <p className="text-xs text-stone-700 font-sans line-clamp-2 leading-relaxed mb-3">
                     {stamp.description}
                   </p>
 
@@ -198,7 +198,7 @@ export const SocialStamps: React.FC = () => {
                       onClick={(e) => handleCopy(stamp, e)}
                       data-cursor="COPY"
                       title="Copy handle"
-                      className="flex items-center space-x-1 text-[9px] sm:text-[10px] font-mono-retro font-bold text-stone-700 hover:text-[#D95D39] transition-colors p-1"
+                      className="flex items-center space-x-1 text-[10px] font-mono-retro font-bold text-stone-700 hover:text-[#D95D39] transition-colors p-1"
                     >
                       {isCopied ? (
                         <>
@@ -219,12 +219,71 @@ export const SocialStamps: React.FC = () => {
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       data-cursor="VISIT"
-                      className="flex items-center space-x-1 px-2 sm:px-2.5 py-1 bg-[#141414] text-[#F5F2ED] text-[9px] sm:text-[10px] font-mono-retro font-bold hover:bg-[#D95D39] transition-colors shadow-sm"
+                      className="flex items-center space-x-1 px-2.5 py-1 bg-[#141414] text-[#F5F2ED] text-[10px] font-mono-retro font-bold hover:bg-[#D95D39] transition-colors shadow-sm"
                     >
                       <span>VISIT</span>
                       <ExternalLink className="w-2.5 h-2.5" />
                     </a>
                   </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Streamlined 2-Column Stamp Sheet (Clean, uncluttered vintage postage layout) */}
+        <div className="grid sm:hidden grid-cols-2 gap-2 mt-4">
+          {SOCIAL_STAMPS.map((stamp) => {
+            return (
+              <motion.div
+                key={`mobile-${stamp.id}`}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => openModal(stamp)}
+                className="bg-[#FFFFFF] border-2 border-[#141414] p-2.5 shadow-[2px_2px_0px_#141414] flex flex-col justify-between cursor-pointer relative"
+                style={{
+                  backgroundImage: `radial-gradient(circle at top left, transparent 4px, #FFFFFF 4px), 
+                                    radial-gradient(circle at top right, transparent 4px, #FFFFFF 4px),
+                                    radial-gradient(circle at bottom left, transparent 4px, #FFFFFF 4px),
+                                    radial-gradient(circle at bottom right, transparent 4px, #FFFFFF 4px)`,
+                }}
+              >
+                {/* Micro Top Bar */}
+                <div className="flex items-center justify-between border-b border-[#141414]/20 pb-1 mb-1.5">
+                  <span className="font-mono-retro text-[8px] font-bold tracking-tight text-[#141414] uppercase truncate">
+                    INDIA POST
+                  </span>
+                  <span 
+                    className="font-rozha text-[10px] font-black px-1 py-0.2 border border-[#141414] text-[#F5F2ED] shrink-0"
+                    style={{ backgroundColor: stamp.color }}
+                  >
+                    {stamp.denomination}
+                  </span>
+                </div>
+
+                {/* Stamp Center Artwork */}
+                <div 
+                  className="py-2.5 px-1.5 border border-dashed border-[#141414]/30 flex flex-col items-center justify-center text-center my-0.5"
+                  style={{ backgroundColor: `${stamp.color}12` }}
+                >
+                  <div 
+                    className="w-8 h-8 flex items-center justify-center text-[#F5F2ED] shadow-sm border border-[#141414] mb-1 shrink-0"
+                    style={{ backgroundColor: stamp.color }}
+                  >
+                    {/* Scale icon for compact mobile card */}
+                    <span className="scale-75 origin-center">{getIcon(stamp.iconName)}</span>
+                  </div>
+                  <h4 className="font-rozha text-xs font-bold text-[#141414] leading-tight truncate max-w-full">
+                    {stamp.name}
+                  </h4>
+                  <p className="font-mono-retro text-[8.5px] text-stone-600 font-bold truncate max-w-full">
+                    {stamp.handle}
+                  </p>
+                </div>
+
+                {/* Micro Footer Action */}
+                <div className="pt-1.5 mt-1 border-t border-[#141414]/15 flex items-center justify-between text-[8px] font-mono-retro font-bold text-stone-600">
+                  <span className="truncate pr-1">{stamp.category}</span>
+                  <span className="text-[#D95D39] shrink-0 font-bold">VIEW →</span>
                 </div>
               </motion.div>
             );

@@ -97,7 +97,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
                     transition: { duration: 0.15 },
                   }}
                   className="inline-block cursor-pointer"
-                  onMouseEnter={() => audio.playClick(300 + index * 80)}
+                  onMouseEnter={() => {
+                    const ragaScale = [523.25, 587.33, 659.25, 783.99, 880.00];
+                    audio.playClick(ragaScale[index % ragaScale.length]);
+                  }}
                 >
                   {char}
                 </motion.span>
@@ -120,8 +123,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </motion.div>
         </div>
 
-        {/* 3-Card Showcase Grid from Theme */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-2 sm:mt-4 z-10">
+        {/* Desktop 3-Card Showcase Grid (Unchanged on Desktop) */}
+        <div className="hidden md:grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-2 sm:mt-4 z-10">
           {/* Card 1: Angled Terracotta Personality Card */}
           <motion.div
             whileHover={{ rotate: 0, scale: 1.02 }}
@@ -294,33 +297,100 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToSection, onO
           </div>
         </div>
 
-        {/* Action Buttons Bar */}
-        <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3 pt-3 sm:pt-6 border-t-2 border-[#141414]">
+        {/* Mobile Streamlined Hero Intro (Decluttered for small screens) */}
+        <div className="block md:hidden mt-2 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="bg-[#D95D39] p-3.5 text-[#F5F2ED] border-2 border-[#141414] shadow-[3px_3px_0px_#141414] relative overflow-hidden"
+          >
+            <div className="flex items-center justify-between border-b border-[#F5F2ED]/30 pb-1.5 mb-2">
+              <div className="flex items-center space-x-1.5">
+                <h3 className="text-[10px] uppercase tracking-wider font-bold font-mono-retro">
+                  01 / ETHOS & CRAFT
+                </h3>
+                <span className="font-hindi text-[10px] text-[#E6A92A] font-bold">
+                  (विचारधारा)
+                </span>
+              </div>
+              <Sparkles className="w-3.5 h-3.5 text-[#E6A92A]" />
+            </div>
+
+            <p className="text-xs leading-relaxed italic font-serif text-[#F5F2ED]">
+              "Design explorer finding beauty in the intersection of retro aesthetics and future tech. I build software systems that feel good to use and better to look at."
+            </p>
+
+            <div className="mt-2.5 pt-2 border-t border-[#F5F2ED]/25 flex items-center justify-between text-[10px] font-mono-retro">
+              <span className="flex items-center space-x-1 text-[#F5F2ED]/90">
+                <span>Aarav</span>
+                <span className="font-hindi text-[#E6A92A] font-bold">· आरव</span>
+              </span>
+              <button
+                onClick={() => onScrollToSection('manifesto')}
+                className="hover:underline font-bold text-[#E6A92A] flex items-center space-x-1"
+              >
+                <span>Read Manifesto</span>
+                <span>→</span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Desktop Action Buttons Bar (Unchanged on Desktop) */}
+        <div className="hidden md:flex flex-row items-center justify-center gap-3 pt-6 border-t-2 border-[#141414] mt-8">
           <button
             onClick={() => onScrollToSection('stamps')}
             data-cursor="POSTAGE"
-            className="w-full sm:w-auto px-3.5 sm:px-5 py-2 sm:py-2.5 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-[11px] sm:text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] hover:bg-[#C04C2A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-1.5 sm:space-x-2"
+            className="w-auto px-5 py-2.5 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#C04C2A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-2"
           >
             <span>COLLECTIBLE STAMPS · डाक टिकट</span>
-            <ArrowDown className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <ArrowDown className="w-3.5 h-3.5" />
           </button>
 
           <button
             onClick={() => onScrollToSection('turntable')}
             data-cursor="LISTEN"
-            className="w-full sm:w-auto px-3.5 sm:px-4 py-2 sm:py-2.5 bg-[#0E3D3C] text-[#F5F2ED] font-mono-retro font-bold text-[11px] sm:text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] hover:bg-[#164E4D] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-1.5 sm:space-x-2"
+            className="w-auto px-4 py-2.5 bg-[#0E3D3C] text-[#F5F2ED] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#164E4D] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-2"
           >
-            <Disc className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E6A92A]" />
+            <Disc className="w-4 h-4 text-[#E6A92A]" />
             <span>CASSETTE SYNTH · संगीत मंच</span>
           </button>
 
           <a
             href="mailto:codemaster923@gmail.com"
             data-cursor="EMAIL"
-            className="w-full sm:w-auto px-3.5 sm:px-4 py-2 sm:py-2.5 bg-[#FFFFFF] text-[#141414] font-mono-retro font-bold text-[11px] sm:text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[3px_3px_0px_#141414] hover:bg-[#F5F2ED] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-1.5"
+            className="w-auto px-4 py-2.5 bg-[#FFFFFF] text-[#141414] font-mono-retro font-bold text-xs uppercase tracking-wider border-2 border-[#141414] shadow-[3px_3px_0px_#141414] hover:bg-[#F5F2ED] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center space-x-1.5"
           >
-            <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#D95D39]" />
+            <Mail className="w-3.5 h-3.5 text-[#D95D39]" />
             <span>DISPATCH MAIL · पत्र भेजें</span>
+          </a>
+        </div>
+
+        {/* Mobile Action Buttons Bar (Sleek, uncluttered 3-column pill bar) */}
+        <div className="grid grid-cols-3 gap-1.5 pt-3 border-t border-[#141414]/20 mt-3 md:hidden">
+          <button
+            onClick={() => onScrollToSection('stamps')}
+            className="py-2 px-1 bg-[#D95D39] text-[#F5F2ED] font-mono-retro font-bold text-[9px] uppercase tracking-tight border border-[#141414] shadow-[1.5px_1.5px_0px_#141414] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex flex-col items-center justify-center text-center"
+          >
+            <span>STAMPS</span>
+            <span className="font-hindi text-[8px] text-[#E6A92A] font-bold">डाक टिकट</span>
+          </button>
+
+          <button
+            onClick={() => onScrollToSection('turntable')}
+            className="py-2 px-1 bg-[#0E3D3C] text-[#F5F2ED] font-mono-retro font-bold text-[9px] uppercase tracking-tight border border-[#141414] shadow-[1.5px_1.5px_0px_#141414] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex flex-col items-center justify-center text-center"
+          >
+            <span>AUDIO DECK</span>
+            <span className="font-hindi text-[8px] text-[#E6A92A] font-bold">संगीत मंच</span>
+          </button>
+
+          <a
+            href="mailto:codemaster923@gmail.com"
+            className="py-2 px-1 bg-[#FFFFFF] text-[#141414] font-mono-retro font-bold text-[9px] uppercase tracking-tight border border-[#141414] shadow-[1.5px_1.5px_0px_#141414] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex flex-col items-center justify-center text-center"
+          >
+            <span>DISPATCH</span>
+            <span className="font-hindi text-[8px] text-[#D95D39] font-bold">पत्र भेजें</span>
           </a>
         </div>
       </div>

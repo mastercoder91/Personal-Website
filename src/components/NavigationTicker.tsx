@@ -175,13 +175,14 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
     const currentIndex = SCREEN_MODES.findIndex((m) => m.id === screenMode);
     const nextIndex = (currentIndex + 1) % SCREEN_MODES.length;
     const nextMode = SCREEN_MODES[nextIndex];
-    audio.playClick(600 + nextIndex * 35);
+    const modeScale = [523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50];
+    audio.playClick(modeScale[nextIndex % modeScale.length]);
     onScreenModeChange(nextMode.id);
     showToastForMode(nextMode);
   };
 
   const selectMode = (mode: ScreenModeOption) => {
-    audio.playClick(650);
+    audio.playClick(783.99);
     onScreenModeChange(mode.id);
     showToastForMode(mode);
     setIsPaletteOpen(false);
@@ -191,10 +192,10 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
     <>
       <header className="sticky top-0 z-40 bg-[#F5F2ED]/95 backdrop-blur-md border-b-2 border-[#141414]">
         {/* Top micro-meta banner */}
-        <div className="bg-[#141414] text-[#F5F2ED] px-2.5 sm:px-4 py-0.5 sm:py-1.5 text-[8px] sm:text-[11px] font-mono-retro flex items-center justify-between gap-1.5 sm:gap-2 border-b border-[#141414] overflow-hidden">
+        <div className="bg-[#141414] text-[#F5F2ED] px-2 sm:px-4 py-0.5 sm:py-1.5 text-[8px] sm:text-[11px] font-mono-retro flex items-center justify-between gap-1.5 sm:gap-2 border-b border-[#141414] overflow-hidden">
           <div className="flex items-center space-x-1.5 sm:space-x-3 truncate">
             <span className="inline-block w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E6A92A] animate-pulse shrink-0"></span>
-            <span className="tracking-[0.1em] sm:tracking-[0.25em] uppercase font-bold text-[#E6A92A] truncate">
+            <span className="tracking-[0.08em] sm:tracking-[0.25em] uppercase font-bold text-[#E6A92A] truncate">
               VOL. 67 — 2099 / FOLIO
             </span>
             <span className="hidden md:inline text-stone-500">|</span>
@@ -219,7 +220,7 @@ export const NavigationTicker: React.FC<NavigationTickerProps> = ({
         </div>
 
         {/* Main Publication Navigation Bar */}
-        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 py-2 sm:py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 py-1.5 sm:py-3 flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={() => {

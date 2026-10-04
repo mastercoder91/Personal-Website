@@ -130,7 +130,7 @@ export function IndianMascot({ onOpenGuestbook, onOpenEasterEgg }: IndianMascotP
               setIsMinimized(false);
               setShowBubble(true);
             }}
-            className="flex items-center space-x-1.5 sm:space-x-2 bg-[#D95D39] text-[#F5F2ED] px-2 sm:px-3 py-1.5 sm:py-2 border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] cursor-pointer group"
+            className="flex items-center space-x-1.5 sm:space-x-2 bg-[#D95D39] text-[#F5F2ED] px-2 sm:px-3 py-1.5 sm:py-2 border-2 border-[#141414] shadow-[2px_2px_0px_#141414] sm:shadow-[4px_4px_0px_#141414] cursor-pointer group scale-90 sm:scale-100 origin-bottom-right"
             title="Open Chhote Ustad (छोटे उस्ताद)"
           >
             {/* Mascot Mini Portrait Icon */}

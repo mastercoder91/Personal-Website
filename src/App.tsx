@@ -78,7 +78,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen bg-[#F5F2ED] text-[#141414] transition-all relative border-[4px] sm:border-[10px] md:border-[16px] border-[#D95D39] bg-bold-canvas overflow-x-hidden ${
+      className={`min-h-screen bg-[#F5F2ED] text-[#141414] transition-all relative border-2 sm:border-[10px] md:border-[16px] border-[#D95D39] bg-bold-canvas overflow-x-hidden ${
         screenMode !== 'clean' ? `${screenMode}-mode` : ''
       }`}
     >

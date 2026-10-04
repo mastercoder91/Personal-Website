@@ -66,7 +66,8 @@ export const CurrentlyCabinet: React.FC = () => {
                 key={idx}
                 whileHover={{ y: -4, rotate: idx % 2 === 0 ? 0.5 : -0.5 }}
                 onClick={() => {
-                  audio.playClick(420 + idx * 60);
+                  const curioNotes = [392.00, 440.00, 493.88, 523.25, 587.33, 659.25];
+                  audio.playClick(curioNotes[idx % curioNotes.length]);
                   setActiveItem(isSelected ? null : idx);
                 }}
                 data-cursor="EXAMINE"
